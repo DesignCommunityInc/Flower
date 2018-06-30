@@ -1,0 +1,134 @@
+﻿
+footer {
+    display: block;
+    position: relative;
+    max-width:  var(--width-max);
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 300px;
+    overflow: hidden;
+    background: var(--color-primary);
+}
+
+.footer_container {
+    display: block;
+    position: relative;
+    max-width:  var(--width-min);
+    margin: 0 auto;
+    padding: 0 var(--margin-fromScreen) 0 var(--margin-fromScreen);
+    top: 20px;
+    z-index: 11;
+}
+
+.any_question {
+    display: inline-block;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+    .any_question > label {
+        font-size: var(--font-size-title);
+        font-weight: bold;
+        color: white;
+    }
+
+    .any_question > p {
+        color: white;
+    }
+
+    .any_question input {
+        width: 40%;
+        height: 25px;
+        outline: none;
+        padding: 5px;
+        border: 1px solid var(--color-primaryLight);
+        border-radius: 10px;
+        background: var(--color-primary);
+        color: var(--color-primaryLight);
+        font-size: var(--font-size-normal);
+        transition: var(--transition-link);
+    }
+
+        .any_question input:nth-child(3) {
+            cursor: pointer;
+            display: block;
+            height: 35px;
+            border-radius: 50px;
+            margin-top: 20px;
+            background: var(--color-primaryLight);
+            color: var(--color-primary);
+        }
+
+.background_spline {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0;
+    background: #ee5454;
+}
+
+.footer_catalog {
+    display: inline-block;
+    position: absolute;
+    width: 300px;
+    margin-left: 250px;
+}
+
+    .footer_catalog label {
+        font-size: var(--font-size-title);
+        font-weight: bold;
+        color: white;
+    }
+
+.footer_about {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 200px;
+}
+
+    .footer_about label {
+        font-size: var(--font-size-title);
+        font-weight: bold;
+        color: white;
+    }
+
+    .footer_about ul {
+        list-style: none;
+        margin-left: -35px;
+    }
+
+        .footer_about ul li {
+            font-size: var(--font-size-mini);
+            margin-top: 10px;
+            color: white;
+        }
+
+.DesCom {
+    display: block;
+    position: relative;
+    width:  var(--width-min);
+}
+
+    .DesCom div {
+        display: inline-block;
+        margin-top: 3.5%;
+    }
+
+        .DesCom div label {
+            color: var(--color-primaryLight);
+        }
+
+        .DesCom div:nth-child(1) {
+            float: left;
+        }
+
+            .DesCom div:nth-child(1) label {
+                font-size: var(--font-size-mini);
+            }
+
+        .DesCom div:nth-child(2) {
+            float: right;
+            width: 160px;
+        }
