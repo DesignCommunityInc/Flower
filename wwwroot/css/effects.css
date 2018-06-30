@@ -1,0 +1,122 @@
+﻿
+
+.up {
+    opacity: 0;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    padding: 5px 20px 5px 20px;
+    border-radius: 50px;
+    text-align: center;
+    color: var(--color-primaryLight);
+    background: linear-gradient(0deg, var(--color-primary), #f04772);
+    transition: var(--transition-link);
+    z-index: 999;
+    overflow: hidden;
+}
+
+    .up:hover {
+        opacity: 1;
+        box-shadow: var(--box-shadow-buttonShadow);
+        transition: var(--transition-link);
+    }
+
+    .up p {
+        color: white;
+    }
+
+.centered {
+    position: absolute;
+    top: 35px;
+    left: 25px;
+    transition: var(--transition-link);
+}
+
+.centered_active {
+    top: 33px;
+    left: 33px;
+    transition: var(--transition-link);
+}
+
+    .centered_active .circle {
+        border: 1px solid var(--color-primary);
+        height: 60%;
+        width: 60%;
+        transition: var(--transition-link);
+    }
+
+#ripple {
+    color: var(--color-primary);
+    width: 120px;
+    height: 120px;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+.circle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 3px solid var(--color-primary);
+    border-radius: 60px;
+    animation: wave 5s infinite linear;
+    animation-fill-mode: both;
+    transition: var(--transition-link);
+}
+
+    .circle:nth-child(2) {
+        animation-delay: 1.66s;
+    }
+
+    .circle:nth-child(3) {
+        animation-delay: 3.33s;
+    }
+
+/* stays on full alpha from 50 to 75 */
+@keyframes wave {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;
+    }
+
+    25% {
+        opacity: 0.0;
+    }
+
+    50% {
+        opacity: 1.0;
+    }
+
+    75% {
+        opacity: 1.0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.0;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Ripple effect */
+.ripple {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
