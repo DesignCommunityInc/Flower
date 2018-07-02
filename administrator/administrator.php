@@ -4,9 +4,9 @@
     <title>Flower</title>
     <meta charset="utf-8" accesskey="makeup" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="wwwroot/css/Administrator/adm.css" />
-    <link rel="stylesheet" type="text/css" href="wwwroot/css/_Layout.css" />
-    <link rel="stylesheet" type="text/css" href="wwwroot/css/effects.css" />
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/Administrator/adm.css" />
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/_Layout.css" />
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/effects.css" />
 </head>
 <body>
     <header>
@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="src_circle"></div>
-                        <img src="wwwroot/images/icons/src.png" class="src_img" width="38" />
+                        <img src="/wwwroot/images/icons/src.png" class="src_img" width="38" />
                     </div>
                 </section>
             </section>

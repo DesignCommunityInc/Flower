@@ -3,7 +3,7 @@
     <nav>
         <ul class="navbar_one">
             <li class="logo">
-                <img src="wwwroot/images/icons/flower_icon.png" />
+                <img src="/wwwroot/images/icons/flower_icon.png" />
                 <a href="https://Flower">Flower</a>
             </li>
             <li class="meta">
@@ -113,7 +113,7 @@
                 </ul>
             </li>
             <li name="bag" id="cart">
-                <img src="wwwroot/images/icons/bag.png" width="48" />
+                <img src="/wwwroot/images/icons/bag.png" width="48" />
                 <div class="cart_items_counter">2</div>
             </li>
         </ul>

@@ -4,14 +4,14 @@
     <meta charset="utf-8" accesskey="makeup" />
     <title>Flower</title>
     <?php
-
-    require("php/layout.php");
+    $root = "../../";
+    require($root . "templates/layout.php");
 
     $url = "https://vk.com/doc103959133_469378964?hash=9ca351008bffbf2a22&dl=f53832525e489cc483";
     $title = "Flower – интернет магазин";
     $description = "Бальзам для рук SOS восстановление";
     $title = "Flower – интернет магазин";
-    $image = "/wwwroot/images/products/product1.png";
+    $image = $root . "wwwroot/images/products/product1.png";
     echo '
     <meta property="og:url" content=' . $url . '>
     <meta property="og:title" content=' . $title . '>
@@ -20,16 +20,14 @@
 
     ?>
 
-
-
-    <link rel="stylesheet" type="text/css" href="wwwroot/css/product_page/p_viewport.css">
-    <link rel="stylesheet" type="text/css" href="wwwroot/css/custom_select.css">
-    <script src="wwwroot/js/CustomSelect.js"></script>
-    <script src="wwwroot/js/DescTrigger.js"></script>
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/product/viewport.css">
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/custom_select.css">
+    <script src="/wwwroot/js/CustomSelect.js"></script>
+    <script src="/wwwroot/js/DescTrigger.js"></script>
 </head>
 <body>
     <?php
-    include "php/header.php";
+    include $root . "templates/page_parts/header.php";
     ?>
     <section class="viewport">
         <div class="header">
@@ -52,11 +50,11 @@
         </div>
         <div class="content">
             <div class="image_section">
-                <img src="wwwroot/images/products/product1.png"/>
-                <img src="wwwroot/images/products/product2.png"/>
-                <img src="wwwroot/images/products/product3.png"/>
-                <img src="wwwroot/images/products/product4.png"/>
-                <img class="selected_image" src="wwwroot/images/products/product4.png"/>
+                <img src="/wwwroot/images/products/product1.png"/>
+                <img src="/wwwroot/images/products/product2.png"/>
+                <img src="/wwwroot/images/products/product3.png"/>
+                <img src="/wwwroot/images/products/product4.png"/>
+                <img class="selected_image" src="/wwwroot/images/products/product4.png"/>
             </div>
             <div class="meta_section">
                 <div class="meta_item add_tocart">
@@ -80,13 +78,13 @@
                     <span></span>
                     <?php
                     echo "<a class='share' href=http://vk.com/share.php?url=" . $url . "&title=" . $title . "&description=" . $description . "&image=" . $image . "&noparse=true>
-                            <img src='wwwroot/images/icons/sc_icons/vk.png' width='28'/>
+                            <img src='/wwwroot/images/icons/sc_icons/vk.png' width='28'/>
                         </a>";
                     echo "<a class='share' href=https://www.facebook.com/sharer/sharer.php?u=" . $url . ">
-                            <img src='wwwroot/images/icons/sc_icons/fc.png' width='28'/>
+                            <img src='/wwwroot/images/icons/sc_icons/fc.png' width='28'/>
                         </a>";
                     echo "<a class='share' href=https://twitter.com/share?url=" . $url . "&text=" . $title . ">
-                            <img src='wwwroot/images/icons/sc_icons/tw.png' width='28'/>
+                            <img src='/wwwroot/images/icons/sc_icons/tw.png' width='28'/>
                         </a>";
 
                     ?>
@@ -144,7 +142,7 @@
           {
               echo
               "<a href='product_page.php' class='product'>" .
-              "<img src='wwwroot/images/products/product" . $i . ".png'>" .
+              "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
               "<span></span>" .
               "<p>Бальзам для рук SOS восстановление</p>" .
               "<div class='gradient'></div>" .
@@ -163,7 +161,7 @@
               echo
               "<a href='product_page.php' class='product'>" .
               "<label class='product_type'>Скидка</label>" .
-              "<img src='wwwroot/images/products/product" . $i . ".png'>" .
+              "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
               "<span></span>" .
               "<p>Бальзам для рук SOS восстановление</p>" .
               "<div class='gradient'></div>" .
@@ -174,7 +172,7 @@
       </div>
     </section>
     <?php
-        include "php/footer.php";
+    include $root . "templates/page_parts/footer.php";
     ?>
 
 <div class="up"><p>up</p></div>

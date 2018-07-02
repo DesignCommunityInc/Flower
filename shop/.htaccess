@@ -1,0 +1,21 @@
+﻿RewriteEngine On
+
+# Протокол https, если он не назначен
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]	
+
+# Блок для убирания .php в конце url
+
+RewriteCond %{THE_REQUEST} " (/[^?/]+)\.php"
+RewriteRule ^ %1 [R=301,L]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)$ /$1.php [L]
+
+# Убрать index.php с url
+
+RewriteRule ^index.php$ / [QSA,R]
+
+# При ошибке выводить страницу ошибки
+
+ErrorDocument 404 /404.html
