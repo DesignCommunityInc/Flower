@@ -1,0 +1,5 @@
+﻿RewriteEngine On
+
+#Изменение положения index
+
+DirectoryIndex index.php

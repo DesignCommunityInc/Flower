@@ -34,7 +34,7 @@ foreach($adm as $person)
         {
             $success = true;
             header('Content-Type: application/json');
-            echo json_encode('success');
+            echo json_encode('success' . '|' . "@@wRMAdATAnirvs0HYp$0");
             exit();
         }
 

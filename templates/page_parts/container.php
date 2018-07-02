@@ -10,7 +10,7 @@
                     </div>
 
                     <div class="src_circle"></div>
-                    <img src="wwwroot/images/icons/src.png" class="src_img" width="38" />
+                    <img src="/wwwroot/images/icons/src.png" class="src_img" width="38" />
 
                 </div>
                 <p>Поиск на сайте</p>
@@ -27,7 +27,7 @@
                         for($i = 0; $i < 8; $i++)
                         {
                             echo
-                            "<a href='https://Flower/product.php' class='product'>" .
+                            "<a href='https://Flower/shop/product/' class='product'>" .
                             "<img src='wwwroot/images/products/product" . $i . ".png'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .

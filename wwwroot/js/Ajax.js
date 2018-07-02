@@ -5,7 +5,7 @@
         var password = $('#password').val();
         if (login.length != 0 && password.length != 0) {
             $.ajax({
-                url: "/php/queries/adm.php",
+                url: "/templates/queries/adm.php",
                 type: 'GET',
                 data: {
                     login: login,
@@ -17,7 +17,7 @@
             }).done(function (data) {
                 onAjaxSuccess(data);
             }).always(function (dataError) {
-                alert(dataError);
+                //alert(dataError);
             });
         }
         else {
@@ -28,6 +28,15 @@
 
 function onAjaxSuccess(data) {
     // Здесь мы получаем данные, отправленные сервером и выводим их на экран.
-    if(data == 'success')
-        window.location.replace("https://flower/administrator.php");
+    var array = splitString(data, '|');
+    var success = array[0];
+    var key = array[1];
+    if(success == 'success')
+        window.location.replace("https://flower/administrator/administrator.php/?=" + key);
+}
+
+function splitString(stringToSplit, separator) {
+    var arrayOfStrings = stringToSplit.split(separator);
+
+    return arrayOfStrings;
 }
