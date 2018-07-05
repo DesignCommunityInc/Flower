@@ -21,6 +21,7 @@
     ?>
 
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/product/viewport.css">
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/viewport.css">
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/custom_select.css">
     <script src="/wwwroot/js/CustomSelect.js"></script>
     <script src="/wwwroot/js/DescTrigger.js"></script>
@@ -29,7 +30,7 @@
     <?php
     include $root . "templates/page_parts/header.php";
     ?>
-    <section class="viewport">
+    <section class="main_viewport">
         <div class="header">
             <div class="header_section" id="prod_meta">
                 <label name="title">Бальзам для рук SOS восстановление</label>
@@ -132,45 +133,36 @@
             </div>
         </div>
     </section>
-    <section class="offers">
-      <div class="offer_item">
-        <label>Вас может заинтересовать</label>
-        <span></span>
-        <div class="offer_container">
-          <?php
-          for($i = 0; $i < 6; $i++)
-          {
-              echo
-              "<a href='product_page.php' class='product'>" .
-              "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
-              "<span></span>" .
-              "<p>Бальзам для рук SOS восстановление</p>" .
-              "<div class='gradient'></div>" .
-              "</a>";
-          }
-          ?>
-        </div>
-      </div>
-      <div class="offer_item">
-        <label>Вас может заинтересовать</label>
-        <span></span>
-        <div class="offer_container">
-          <?php
-          for($i = 0; $i < 6; $i++)
-          {
-              echo
-              "<a href='product_page.php' class='product'>" .
-              "<label class='product_type'>Скидка</label>" .
-              "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
-              "<span></span>" .
-              "<p>Бальзам для рук SOS восстановление</p>" .
-              "<div class='gradient'></div>" .
-              "</a>";
-          }
-          ?>
-        </div>
-      </div>
-    </section>
+      <section class="main_container">
+         <section class="viewport">
+                <div class="interest">
+                </div>
+                <div class="content_wrapper" id="news">
+                        <div class="header">
+                            <label class="view_label offer_label">Вас может заинтересовать</label>
+                            <span class="line"></span>
+                         </div>
+                        <div class="body">
+                            <?php
+                            for($i = 0; $i < 8; $i++)
+                            {
+                                echo
+                                "<a href='https://Flower/shop/product/' class='product'>" .
+                                "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
+                                "<div class='tocart'>" .
+                                "<label>В корзину</label>" .
+                                "</div>" .
+                                "<span class='line'></span>" .
+                                "<p>Бальзам для рук SOS восстановление</p>" .
+                                "<label name='price' class='price'>720 ₽</label>" .
+                                "<div class='gradient'></div>" .
+                                "</a>";
+                            }
+                            ?>
+                    </div>
+                </div>
+             </section>
+          </section>
     <?php
     include $root . "templates/page_parts/footer.php";
     ?>

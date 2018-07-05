@@ -24,11 +24,11 @@
                     </div>
                     <div class="body">
                         <?php
-                        for($i = 0; $i < 8; $i++)
+                        for($i = 0; $i < 12; $i++)
                         {
                             echo
                             "<a href='https://Flower/shop/product/' class='product'>" .
-                            "<img src='wwwroot/images/products/product" . $i . ".png'>" .
+                            "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
                             "</div>" .
@@ -43,7 +43,11 @@
             </div>
 
                 <section class="daily_share">
-                  <div class="container">
+                    <div class="daily_image">
+                        <img src='/wwwroot/images/rotate_in_motion.png' draggable="false" />
+                        <img src='/wwwroot/images/lines.png' draggable="false"/>
+                    </div>
+                  <!--<div class="container">
                     <?php
                     for($i = 0; $i < 3; $i++)
                     {
@@ -60,7 +64,7 @@
                         "</div>";
                     }
                     ?>
-                  </div>
+                  </div>-->
               </section>
                 <div class="content_wrapper" id="sales">
                     <div class="header">
@@ -69,12 +73,12 @@
                     </div>
                     <div class="body">
                         <?php
-                        for($i = 0; $i < 8; $i++)
+                        for($i = 0; $i < 12; $i++)
                         {
                             echo
                             "<a href='https://Flower/product.php' class='product'>" .
                             "<label class='product_type'>Скидка</label>" .
-                            "<img src='wwwroot/images/products/product" . $i . ".png'>" .
+                            "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
                             "</div>" .
@@ -88,24 +92,26 @@
                     </div>
                 </div>
                 <section class="season_share">
-                  <!--<div class="container">
-                    <label>Лето</label> <span></span>
-                    <p>Время быть неотразимой</p>
-                  </div>-->
+                    <img src="/wwwroot/images/summer_header.jpg" draggable="false" />
                 </section>
+                <div class="offer">
+                    <img src="/wwwroot/images/summer_price.jpg" />
+                    <div class="button">Побробнее</div>
+                </div>
                 <div class="content_wrapper" id="summer">
-                    <div class="header">
+                    <div class="header dynamic_header">
                         <label class="view_label">Летние товары</label>
                         <span class="line"></span>
                     </div>
+
                     <div class="body">
                         <?php
-                        for($i = 0; $i < 8; $i++)
+                        for($i = 0; $i < 12; $i++)
                         {
                             echo
-                            "<a href='https://Flower/product.php' class='product'>" .
-                            "<label class='product_type dynamic_type'>Скидка</label>" .
-                            "<img src='wwwroot/images/products/product" . $i . ".png'>" .
+                            "<a href='https://Flower/product.php' class='product dynamic_product'>" .
+                            "<label class='product_type'>Скидка</label>" .
+                            "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
                             "</div>" .

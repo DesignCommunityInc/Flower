@@ -1,10 +1,9 @@
 ﻿.slider_wrapper {
     display: block;
     position: relative;
-    max-width:  var(--width-max);
+    width:  100%;
     height: var(--height-slider);
     margin: 0 auto;
-    margin-top: 200px;
     top: 0;
     overflow: hidden;
 }

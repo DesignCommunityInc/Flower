@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\logo",
-    "\\logo\\images",
-    "\\php",
-    "\\php\\queries",
+    "\\shop",
+    "\\shop\\product",
+    "\\templates",
+    "\\templates\\page_parts",
     "\\wwwroot",
     "\\wwwroot\\css",
-    "\\wwwroot\\css\\Administrator",
-    "\\wwwroot\\css\\product_page",
+    "\\wwwroot\\css\\product",
     "\\wwwroot\\js"
   ],
-  "SelectedNode": "\\wwwroot\\css\\_Layout.css",
+  "SelectedNode": "\\templates\\page_parts\\container.php",
   "PreviewInSolutionExplorer": false
 }
