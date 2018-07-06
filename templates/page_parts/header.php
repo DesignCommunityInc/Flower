@@ -15,7 +15,7 @@
             <li class="links">
                 <ul>
                     <li>
-                        <a href="#">Каталог</a>
+                        <a href="https://Flower/shop/catalog/">Каталог</a>
                     </li>
                     <li>
                         <a href="#">Новости</a>

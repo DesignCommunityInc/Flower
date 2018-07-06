@@ -104,7 +104,6 @@ a {
     top: 0;
     background: linear-gradient(to right, #ef4b6d, #e86c46);
     filter: var(--contrast-default);
-    z-index: 990;
 }
 .rating {
     display: inline-block;

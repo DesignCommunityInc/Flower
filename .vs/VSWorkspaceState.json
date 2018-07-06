@@ -2,14 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\shop",
+    "\\shop\\catalog",
     "\\shop\\product",
     "\\templates",
     "\\templates\\page_parts",
     "\\wwwroot",
     "\\wwwroot\\css",
-    "\\wwwroot\\css\\product",
     "\\wwwroot\\js"
   ],
-  "SelectedNode": "\\templates\\page_parts\\container.php",
+  "SelectedNode": "\\wwwroot\\css\\viewport.css",
   "PreviewInSolutionExplorer": false
 }
