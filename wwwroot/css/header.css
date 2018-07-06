@@ -9,6 +9,7 @@ header {
     z-index: 999;
 }
     header .borderBottom {
+        top: -1px!important;
         width: 0;
         height: 5px;
     }
@@ -87,7 +88,7 @@ li {
             display: block;
             position: relative;
             top: 10%;
-            font-size: 15pt;
+            font-size: var(--font-size-title);
             font-weight: bold;
             text-align: left;
         }
@@ -110,18 +111,6 @@ li {
             text-transform: uppercase;
             font-weight: bold;
         }
-
-@media only screen and (max-device-width: 768px)
-{
-    .navbar_one .links {
-        display: none;
-    }
-}
-@media only screen and (max-width: 768px) {
-    .navbar_one .links {
-        display: none;
-    }
-}
 
         /* -------------------- */
 .fixed_nav {
@@ -155,17 +144,18 @@ li {
     filter: var(--contrast-default);
     z-index: 10;
 }
-    .categories label[name="title"] {
-        display: block;
-        position: relative;
-        height: 50px;
-        top: 10px;
-        left: 0px;
-        font-size: var(--font-size-title);
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: left;
-    }
+.categories label[name="maintitle"],
+.categories label[name="title"] {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: var(--font-size-title);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+}
     .categories span[name="title"] {
         width: 0;
     }
@@ -182,7 +172,7 @@ li {
     cursor: pointer;
     display: block;
     position: absolute;
-    top: 11px;
+    top: 13px;
     left: 220px;
     width: 25px;
     height: 21px;
@@ -195,12 +185,20 @@ li {
         height: 3px;
         margin-top: 3px;
         border-radius: 50px;
-        background: var(--color-darkLight);
+        background: var(--color-primaryDark);
         transition: var(--transition-link);
     }
+.categories:hover span:nth-of-type(2) {
+    width: 66%;
+    transition: var(--transition-link);
+}
+.categories:hover  span:nth-of-type(3) {
+    width: 33%;
+    transition: var(--transition-link);
+}
 
 .burger_tocross {
-    top: 16px;
+    /*top: 19px;*/
     left: 220px;
     width: 25px;
     height: 21px;
@@ -208,23 +206,29 @@ li {
 }
 
     .burger_tocross span:nth-child(1) {
-        transform: rotate(45deg);
+        /*transform: rotate(0deg);*/
         transition: var(--transition-link);
+        background: var(--color-primary)!important;
     }
 
     .burger_tocross span:nth-child(2) {
-        transform: rotate(180deg);
-        opacity: 0;
+        /*top: -12px;*/
+        /*transform: rotate(90deg);*/
+        /*opacity: 0;*/
+        width: 66%;
         transition: var(--transition-link);
+        background: var(--color-primary) !important;
     }
 
     .burger_tocross span:nth-child(3) {
-        transform: rotate(135deg);
-        top: -12px;
+        /*transform: rotate(-90deg);*/
+        /*top: -12px;*/
+        width: 33%;
         transition: var(--transition-link);
+        background: var(--color-primary) !important;
     }
 
-.category_open_btn:hover span {
+.categories:hover .category_open_btn span {
     background: var(--color-primaryDark);
     transition: var(--transition-link);
 }
@@ -233,7 +237,7 @@ li {
     position: relative;
     width: 100%;
     left: 0; /* Т.к. это список, по дефолту слева отступ в 40 пикселей*/
-    margin-top: 27px;
+    margin-top: 36px;
     list-style: none;
 }
     .categories ul li {
@@ -245,13 +249,14 @@ li {
         margin: 0;
         transition: var(--transition-link);
     }
-        .categories ul li label{
+        .categories ul li > label {
+            cursor: pointer;
             display: block;
             position: relative;
-            height: 70%;
-            top: 30%;
+            height: 100%;
             width: 100%;
             left: 0px;
+            line-height: 50px;
             text-align: left;
             text-transform: none;
             font-size: var(--font-size-normal);
@@ -267,7 +272,6 @@ li {
         }
         .categories ul li:hover {
             background: var(--gradient-default);
-            transition: var(--transition-link);
         }
         .categories ul li:hover label{
             color: var(--color-primaryLight);
@@ -282,6 +286,7 @@ li {
 .list_container {
     display: none;
     position: relative;
+    width: 300px;
     height: auto;
     left: 305px;
     top: -50px;
@@ -291,41 +296,34 @@ li {
     transition: var(--transition-link);
 }
     .list_container label {
-        display: block;
-        position: relative;
-        margin: 0;
+        cursor: default!important;
         color: var(--color-primaryDark) !important;
         text-transform: none!important;
     }
     .list_container ul{
         margin-top: 20px!important;
     }
-    .list_container ul li label[name=title] {
-        height: 50px;
-        top: 10px;
-        left: 0px;
-        font-size: var(--font-size-title);
-        font-weight: bold;
-        text-align: left;
-    }
-    .list_container ul li span[name=title] {
-        display: block;
-        position: relative;
-        width: 80px;
-        height: 3px;
-        left: 20px;
-        border-radius: 1.5px;
-        background: var(--color-primary);
-    }
 .list_container ul li {
     cursor: pointer;
-    font-size: var(--font-size-mini);
     height: 50px;
     width: 100%;
-    text-transform: none;
-    text-align: left;
 }
-
+    .list_container ul li label {
+        cursor: pointer!important;
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        left: 0px;
+        line-height: 50px;
+        text-align: left;
+        text-transform: none;
+        font-size: var(--font-size-normal);
+    }
+        .list_container ul li label:hover {
+            color: var(--color-primaryLight) !important;
+            transition: var(--transition-link);
+        }
 #cart {
     display: inline-block;
     position: absolute;
@@ -350,7 +348,7 @@ li {
         background: var(--color-primary);
         top: 30px;
         right: 0px;
-        font-size: var(--font-size-mini);
+        font-size: 8pt;
         color: white;
     }
 

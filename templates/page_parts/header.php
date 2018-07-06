@@ -15,7 +15,7 @@
             <li class="links">
                 <ul>
                     <li>
-                        <a href="#">Каталог</a>
+                        <a href="https://Flower/shop/catalog/">Каталог</a>
                     </li>
                     <li>
                         <a href="#">Новости</a>
@@ -29,7 +29,7 @@
         <ul class="fixed_nav">
             <li class="categories">
                 <div class="category_header">
-                    <label name="title">Категории</label>
+                    <label name="maintitle">Категории</label>
                     <div class="category_open_btn">
                         <span></span>
                         <span></span>
@@ -45,7 +45,9 @@
                             <span name="title"></span>
                             <ul class="list">
                                 <li>
-                                    <label>Депиляция</label>
+                                    <a href="#">
+                                        <label>Депиляция</label>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -57,16 +59,24 @@
                             <span name="title"></span>
                             <ul class="list">
                                 <li>
-                                    <label>Паста для шугаринга</label>
+                                    <a href="#">
+                                        <label>Паста для шугаринга</label>
+                                    </a>
                                 </li>
                                 <li>
-                                    <label>Средства до и после шугаринга</label>
+                                    <a href="#">
+                                        <label>Средства до и после шугаринга</label>
+                                    </a>
                                 </li>
                                 <li>
-                                    <label>Аксессуары для шугаринга</label>
+                                    <a href="#">
+                                        <label>Аксессуары для шугаринга</label>
+                                    </a>
                                 </li>
                                 <li>
-                                    <label>Дополнительный уход</label>
+                                    <a href="#">
+                                        <label>Дополнительный уход</label>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -110,6 +120,7 @@
                             </ul>
                         </div>
                     </li>
+
                 </ul>
             </li>
             <li name="bag" id="cart">
@@ -126,9 +137,9 @@
                 for($i = 0; $i < 6; $i++)
                 {
                     echo "<div class='product'>" .
-                    "<img src='wwwroot/images/products/product" . ($i + 1) . ".png'>" .
+                    "<img src='/wwwroot/images/products/product" . ($i + 1) . ".png'>" .
                     "<div class='tocart'>" .
-                    "<img src='wwwroot/images/icons/bag_white.png' width='32' />" .
+                    "<img src='/wwwroot/images/icons/bag_white.png' width='32' />" .
                     "</div>" .
                     "<p>Бальзам для рук SOS восстановление</p>" .
                     "<label class='price'>720</label>" .
@@ -157,5 +168,5 @@
             </div>
         </div>
     </nav>
-    <div class="borderBottom"></div>
+    <div class="borderBottom" id="borderHeader"></div>
 </header>

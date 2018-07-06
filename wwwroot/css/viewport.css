@@ -1,4 +1,14 @@
-﻿.search_wrapper {
+﻿.main_container {
+    display: block;
+    position: relative;
+    width: 100%;
+    top: 50px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+
+.search_wrapper {
     display: block;
     position: relative;
     max-width:  var(--width-min);
@@ -105,7 +115,7 @@
     .viewport .header {
         display: block;
         position: relative;
-        width:  var(--width-min);
+        width: var(--width-min);
         margin: 0 auto;
         margin-top: 50px;
         margin-bottom: 30px;
@@ -123,51 +133,83 @@
             margin-bottom: 2px;
             margin-top: 10px;
             margin-left: var(--margin-fromScreen);
-            background: var(--color-primary)!important;
+            background: var(--color-primary);
         }
+  
+/*.dynamic_header {
+    background: var(--gradient-dynamic) !important;
 
+}*/
+.dynamic_header .line {
+    background: #6CB3FF!important;
+}
     .viewport .body {
         display: block;
         position: relative;
-        max-width:  var(--width-min);
+        max-width: var(--width-min);
         margin: 0 auto;
+        /*transition: var(--transition-link);*/
     }
-.daily_share{
+.daily_share {
     display: block;
     position: relative;
-    max-width:  var(--width-max);
+    max-width: var(--width-max);
     height: 500px;
     margin: auto;
     margin-top: 100px;
     background: var(--gradient-default);
     filter: var(--contrast-default);
+    overflow: hidden;
 }
-.daily_share .container{
-  display: block;
+/*.daily_share .container{
+  display: inline-block;
   position: absolute;
-  min-width: 50%;
   height: 100%;
   top: 0;
-  right: 0;
+  right: 50px;
   overflow: hidden;
-}
+}*/
+
+    .daily_share .daily_image img {
+        opacity: 0;
+    }
+    .daily_share .daily_image img:nth-child(2) {
+        display: block;
+        position: relative;
+        top: 0;
+        width: 800px;
+        height: 100%;
+        margin: 0 auto;
+        z-index: 4;
+    }
+    .daily_share .daily_image img:nth-child(1) {
+        transform: rotate(-10deg);
+        width: 303px;
+        height: 303px;
+        display: block;
+        position: absolute;
+        top: 22%;
+        left: 43%;
+        z-index: 5;
+    }
+    .rotate_in_motion {
+        opacity: 1!important;
+        transform: rotate(0deg)!important;
+        transition: 1s ease-in-out;
+    }
 .share_item {
     display: inline-block;
     position: relative;
-    width: 245px;
-    height: 400px;
-    margin-top: 60px;
-    margin-left: 1.5%;
+    width: 200px;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: 20px;
     background: var(--color-primaryLight);
     box-shadow: var(--box-shadow-buttonShadow);
-    border-radius: 100px 10px 10px 10px;
+    /*border-radius: 100px 10px 10px 10px;*/
+    border-radius: 10px 10px 10px 10px;
     overflow: hidden;
 }
-
-    .share_item:hover .share_bg2 {
-        transform: rotate(-10deg);
-        transition: var(--transition-low);
-    }
 
 .share_bg1 {
     display: block;
@@ -185,7 +227,7 @@
     width: 200%;
     left: -50%;
     height: 100%;
-    top: -60%;
+    top: -65%;
     opacity: .9;
     transform: rotate(10deg);
     background: var(--gradient-default);
@@ -195,8 +237,8 @@
 .share_circle {
     display: block;
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     top: 18%;
     margin: 0 auto;
     border-radius: 75px;
@@ -212,12 +254,12 @@
         text-align: center;
         height: 20px;
         color: var(--color-primaryLight);
-        font-size: 20pt;
+        font-size: var(--font-size-normal);
     }
 
     .share_circle .share_number {
         top: 22%;
-        font-size: 45pt;
+        font-size: 30pt;
     }
 
 .share_description {
@@ -227,17 +269,18 @@
     height: 20%;
     top: 65%;
     left: 5%;
-    font-size: var(--font-size-normal);
+    font-size: var(--font-size-mini);
     color: var(--color-primaryLight);
 }
 
 .share_date {
     display: block;
     position: absolute;
+    height: 30px;
     width: 90%;
-    top: 90%;
+    top: 88%;
     left: 5%;
-    padding: 2% 0 2% 0;
+    line-height: 30px;
     text-align: center;
     background: var(--color-primaryLight);
     border-radius: 50px;
@@ -249,45 +292,63 @@
   display: block;
   position: relative;
   max-width:  var(--width-max);
-  height: 200px;
+  max-height: 200px;
   margin: auto;
   margin-top: 100px;
   background: var(--gradient-dynamic);
   filter: var(--contrast-default);
+  overflow: hidden;
 }
-.season_share .container{
-  display: block;
-  position: relative;
-  max-width: 30%;
-  height: 100%;
-  margin: 0 auto;
+    .season_share img {
+        opacity: 0;
+        display: block;
+        position: relative;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+.season_scroll{
+    opacity: 1!important;
+    transition: 1s ease-in-out;
 }
-.season_share .container label{
-  display: block;
-  position: absolute;
-  top: 30%;
-  left: 5%;
-  font-size: 40pt;
-  font-style: italic;
-  font-weight: bold;
-  color: var(--color-primaryLight);
+.offer {
+    display: block;
+    position: relative;
+    max-width: var(--width-min);
+    margin: auto;
+    margin-top: 50px;
+    background: var(--gradient-dynamic);
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
 }
-.season_share .container span{
-  display: block;
-  position: absolute;
-  width: 25%;
-  height: 1%;
-  top: 49%;
-  left: 37.5%;
-  background: var(--color-primaryLight);
-}
-.season_share .container p{
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  font-size: var(--font-size-title);
-  font-style: italic;
-  font-weight: bold;
-  color: var(--color-primaryLight);
-}
+
+    .offer img {
+        display: block;
+        position: relative;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+    .offer .button {
+        position: relative;
+        width: 350px;
+        height: 40px;
+        line-height: 40px;
+        bottom: 20px;
+        margin: 0 auto;
+        margin-top: -50px!important;
+        background: transparent;
+        border: 3px solid var(--color-primaryLight);
+        font-size: var(--font-size-title);
+        text-transform: lowercase;
+        font-weight: bold;
+        font-style: italic;
+        z-index: 3;
+    }
+
+

@@ -8,12 +8,6 @@
 
 
 
-
-
-
-
-
-
     $(function setUp() {
             //toUp();
 
@@ -23,14 +17,28 @@
 
         $(this).parent().find('input').val('');
         $(this).parent().find('input').css({ 'display': 'none' });
-
-        if ($('header').top != -120 && $(window).scrollTop() >= 120)
+        var ScrollTop = $(window).scrollTop();
+        if ($('header').top != -120 && ScrollTop >= 120) {
             $('header').addClass('header_scroll');
+           
+        }
+        if (ScrollTop > 0)
+            $('header').css({ "top": - ScrollTop });
+
+        if (ScrollTop > 350) {
+            $('.up').css({
+                'cursor': 'pointer',
+                'opacity': '1'
+            });
+
+            if (ScrollTop > 4350) {
+                $('#borderHeader').css({
+                    'background': 'var(--gradient-dynamic)'
+                });
+            }
+        }
     });
-
-
-
-
+    
 
 
     $("#cart").on('click', (function () {
@@ -39,53 +47,26 @@
     }));
 
     $(".category_open_btn").on('click', (function (event) {
-        var array = $('.categories ul li');
         if (ButtonRoles["categories"] == open) {
-
-            var ctg = $('.categories');
-            var categories = $('.categories .category');
-            var height = (categories.length * 60 + 30 /* margin-top */ + 100 /* design-part */ );
-            $('.categories').animate({
-                height: height.toString() + "px",
-                textIndent: 20
-            }, 100);
-            $('.categories span[name="title"]').animate({ width: "80px" }, 100);
-
-            $(this).addClass('burger_tocross');
+            category_function("open");
             ButtonRoles["categories"] = close;
-
-            $(array).css({ 'display': 'block' });
-            $(array).animate({ 'opacity': '1' }, 100);
-
-            $('.list_gradient').animate({
-                opacity: '1',
-                height: (height - 50).toString() + "px"
-            }, 50);
-
-            $('.list_gradient').css({ 'box-shadow': 'var(--box-shadow-buttonShadow)' });
-      }
+        }
         else if (ButtonRoles["categories"] == close) {
-
-            $(this).removeClass('burger_tocross');
+            category_function("close");
             ButtonRoles["categories"] = open;
-
-            $('.list_gradient').animate({
-                opacity: '0',
-                height: 0
-            }, 150);
-
-            $('.list_gradient').css({ 'box-shadow': 'none' });
-
-            $(array).animate({ 'opacity': '0' }, 100);
-            $(array).css({ 'display': 'none' });
-
-            $('.categories').animate({
-                height: '40px',
-                textIndent: 0
-            }, 150); //КАТЕГОРИИ - ВЫСОТА СОКРАЩЕНИЕ
-            $('.categories span[name="title"]').animate({ width: 0 }, 200);
-      }
+        }
     }));
+    $(".categories label[name=maintitle]").on('click', (function (event) {
+        if (ButtonRoles["categories"] == open) {
+            category_function("open");
+            ButtonRoles["categories"] = close;
+        }
+        else if (ButtonRoles["categories"] == close) {
+            category_function("close");
+            ButtonRoles["categories"] = open;
+        }
+    }));
+    
 
     $(".subcategory").on('click', 'div', (function (event) {
 
@@ -132,33 +113,100 @@
     $(window).scroll(function scroll() {
         var ScrollTop = parseInt($(window).scrollTop());
         {
-            if (ScrollTop <= 130) {
-                $('header').css({
-                    'top': (-ScrollTop).toString() + 'px',
-                });
-                //$('header .borderBottom').css({ 'width': (ScrollTop * 1920 * 0.01).toString() + 'px' });
-                $('header').removeClass('header_scroll');
-            }
-            else if ($('header').top != -130 && ScrollTop >= 130) {
-                $('header').addClass('header_scroll');
-            }
-
             if (ScrollTop > 350) {
                 $('.up').css({
                     'cursor': 'pointer',
                     'opacity': '1'
                 });
+                
+                    if (ScrollTop > 1800) {
+                        $('.daily_share .daily_image img').addClass('rotate_in_motion');
+                        $('.daily_share .daily_image img:nth-child(1)').addClass('rotate_in_motion');
+                        if (ScrollTop > 3500) {
+                            $('.season_share img').addClass('season_scroll');
+
+                            if (ScrollTop > 4370) {
+                                $('#borderHeader').css({
+                                    'background': 'var(--gradient-dynamic)'
+                                });
+                            }
+                            else if (ScrollTop < 4370) {
+                                $('#borderHeader').css({
+                                    'background': 'var(--gradient-default)'
+                                });
+                            }
+                        }
+                       
+                    }
             }
-            else {
+            else if (ScrollTop <= 350) {
                 $('.up').css({
                     'opacity': '0',
                     'cursor': 'default'
                 });
+                if (ScrollTop <= 130) {
+                    $('header').css({
+                        'top': (-ScrollTop).toString() + 'px',
+                    });
+                    //$('header .borderBottom').css({ 'width': (ScrollTop * 1920 * 0.01).toString() + 'px' });
+                    $('header').removeClass('header_scroll');
+                }
+                else if ($('header').top != -130 && ScrollTop >= 130) {
+                    $('header').addClass('header_scroll');
+                }
             }
+
+           
         }
     });
 
 });
+function category_function(state) {
+    var array = $('.categories ul li');
+    if (state == "open") {
+
+        var ctg = $('.categories');
+        var categories = $('.categories .category');
+        var height = (categories.length * 60 + 36 /* margin-top */ + 100 /* design-part */);
+        $('.categories').animate({
+            height: height.toString() + "px",
+            textIndent: 20
+        }, 100);
+        $('.categories span[name="title"]').animate({ width: "80px" }, 100);
+
+        $(".category_open_btn").addClass('burger_tocross');
+
+        $(array).css({ 'display': 'block' });
+        $(array).animate({ 'opacity': '1' }, 100);
+
+        $('.list_gradient').animate({
+            opacity: '1',
+            height: (height - 50).toString() + "px"
+        }, 50);
+
+        $('.list_gradient').css({ 'box-shadow': 'var(--box-shadow-buttonShadow)' });
+    }
+    else if (state == "close") {
+
+        $(".category_open_btn").removeClass('burger_tocross');
+
+        $('.list_gradient').animate({
+            opacity: '0',
+            height: 0
+        }, 150);
+
+        $('.list_gradient').css({ 'box-shadow': 'none' });
+
+        $(array).animate({ 'opacity': '0' }, 100);
+        $(array).css({ 'display': 'none' });
+
+        $('.categories').animate({
+            height: '40px',
+            textIndent: 0
+        }, 150); //КАТЕГОРИИ - ВЫСОТА СОКРАЩЕНИЕ
+        $('.categories span[name="title"]').animate({ width: 0 }, 200);
+    }
+}
 
 function search_open(search) {
     var wrapper = $(search).parent();

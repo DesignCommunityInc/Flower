@@ -19,3 +19,9 @@ RewriteRule ^index.php$ / [QSA,R]
 # При ошибке выводить страницу ошибки
 
 ErrorDocument 404 /404.html
+
+# При запросле на shop перевести на Flower
+
+RewriteCond %{REQUEST_URI} ^/shop/$
+
+RewriteRule ^.*$ https://Flower/? [R=301,L]

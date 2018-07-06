@@ -1,6 +1,9 @@
     <?php
 
     require_once ("queries/fishtext.php");
+
+    //<meta name="viewport" content="width=device-width, initial-scale=1">
+
     echo
     '
     <meta charset="utf-8" accesskey="makeup" />

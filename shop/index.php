@@ -9,17 +9,20 @@
     <?php
     $root = "../";
     require_once($root . "templates/layout.php");
+    require_once($root . "templates/page_parts/header.php");
     ?>
 </head>
 <body>
-    <?php
-    require_once($root . "templates/page_parts/header.php");
+    <div class="default_container">
+        <?php
     require_once($root . "templates/page_parts/slider.php");
     require_once($root . "templates/page_parts/container.php");
     require_once($root . "templates/page_parts/footer.php");
-    ?>
-    <div class="borderBottom"></div>
-    <div class="up"><p>up</p></div>
+        ?>
+        <div class="up button">
+            <p>up</p>
+        </div>
+    </div>
 
     <script src="/wwwroot/js/SliderScript.js"></script>
 </body>

@@ -7,10 +7,11 @@
         </div>
             <div class="filter"></div>
             <slider>
-                <img src="wwwroot/images/slide1.jpg">
-                <img src="wwwroot/images/slide2.jpg">
-                <img src="wwwroot/images/slide3.jpg">
-                <img src="wwwroot/images/slide4.jpg">
+                <img src="/wwwroot/images/slide1.jpg">
+                <img src="/wwwroot/images/slide2.jpg">
+                <img src="/wwwroot/images/slide3.jpg">
+                <img src="/wwwroot/images/slide4.jpg">
             </slider>
 
     </section>
+    <div class="borderBottom"></div>
