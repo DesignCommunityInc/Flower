@@ -1,29 +1,27 @@
 ﻿$(document).ready(function () {
     
-    $('#submit').on('click', function () {
-        var login = $('#login').val();
-        var password = $('#password').val();
-        if (login.length != 0 && password.length != 0) {
-            $.ajax({
-                url: "/templates/queries/adm.php",
-                type: 'GET',
-                data: {
-                    login: login,
-                    password: password
-                },
-                dataType: 'json',
-                contentType: 'application/json',
-                json: true
-            }).done(function (data) {
-                onAjaxSuccess(data);
-            }).always(function (dataError) {
-                //alert(dataError);
-            });
-        }
-        else {
-            alert("Не все поля заполнены");
-        }
-    });
+    // $('#submit').on('click', function () {
+    //     var login = $('#login').val();
+    //     var password = $('#password').val();
+        
+    //         $.ajax({
+    //             url: "/templates/queries/adm.php",
+    //             type: 'GET',
+    //             data: {
+    //                 login: login,
+    //                 password: password
+    //             },
+    //             dataType: 'json',
+    //             contentType: 'application/json',
+    //             json: true
+    //         }).done(function (data) {
+    //             onAjaxSuccess(data);
+    //         }).always(function (dataError) {
+    //             alert(dataError);
+    //         });
+        
+
+    // });
 });
 
 function onAjaxSuccess(data) {
@@ -31,8 +29,8 @@ function onAjaxSuccess(data) {
     var array = splitString(data, '|');
     var success = array[0];
     var key = array[1];
-    if(success == 'success')
-        window.location.replace("https://flower/administrator/administrator.php/?=" + key);
+//     if(success == 'success')
+//         window.location.replace("https://flower/administrator/administrator.php/?=" + key);
 }
 
 function splitString(stringToSplit, separator) {

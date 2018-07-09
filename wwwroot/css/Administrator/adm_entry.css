@@ -46,7 +46,7 @@ body {
     font-style: italic;
     font-weight: bold;
 }
-.auth div{
+.auth form{
     display: block;
     position: relative;
     width: 100%;
@@ -54,7 +54,7 @@ body {
     margin-top: 5%;
     overflow: hidden;
 }
-    .auth div input {
+    .auth form input {
         display: block;
         position: relative;
         width: 60%;
@@ -64,11 +64,11 @@ body {
         border: none;
         transition: var(--transition-link);
     }
-        .auth div input:focus {
+        .auth form input:focus {
             padding-left: 2%;
             transition: var(--transition-link);
         }
-    .auth div label::after {
+    .auth form label::after {
         content: "";
         display: block;
         position: relative;
@@ -80,7 +80,7 @@ body {
         background: var(--gradient-default);
     }
 
-    .auth div input[type="submit"] {
+    .auth form input[type="submit"] {
         margin-top: 50%;
         margin-bottom: 5%;
         text-transform: lowercase;

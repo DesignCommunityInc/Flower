@@ -16,7 +16,7 @@
                 </label>
                 <label id="header_user">
                 <span>Вы вошли как</span> 
-                    #UserName
+                    <?php echo $_SESSION['user']['name']; ?>
                 </label>
                 <label id="quit">Выйти</label>
             </section>
@@ -57,10 +57,6 @@
                     <label>Таблица товаров</label>
                     <span class="line"></span>
                 </div>
-                 <!--<div id="pagination_label">
-                    <label>Страницы</label>
-                    <span class="line"></span>
-                </div>-->
             </section>
             <section class="viewport">
                 <section class="viewport_section" id="v_s_first">
@@ -94,7 +90,6 @@
                         ?>
                     </table>
                 </section>
-                <!--<section class="viewport_section" id="v_s_third"></section>-->
             </section>
         <div class="pagination_wrapper">
             <label>Список страниц</label>
