@@ -1,12 +1,16 @@
 <?php
-
     require "../templates/queries/db.php";
+
     $errors = array();
 
-    if(isset($_POST['submit'])){
+    $data = $_POST;
+    if(isset($data["action"])){
+        require "../templates/queries/adm.php";
+    }
+    if(isset($data['submit'])){
 
-        $login = $_POST["login"];
-        $password = $_POST["password"];
+        $login = $data["login"];
+        $password = $data["password"];
 
         if($login == ""){
             $errors[] = "Вы не ввели логин!<br>"; 
@@ -15,7 +19,7 @@
             $errors[] = "Вы не ввели пароль!<br>";
         }
 
-        $query = "SELECT `ID`, `password`, `username` FROM `admins` WHERE `username` = '$login'";
+        $query = "SELECT `Id`, `password_hash`, `username` FROM `admins` WHERE `username` = '$login'";
         $action = mysqli_query($db, $query);
         $user = array();
 
@@ -23,7 +27,7 @@
             $user[] = $item;
         }
 
-        if( password_verify( $password, $user[0]["password"] ) == false ){
+        if( password_verify( $password, $user[0]["password_hash"] ) == false ){
             $errors[] = "Пароль не верный!";
         }
 
@@ -38,9 +42,9 @@
     }
 
     if (isset($_SESSION["user"]["name"])){
-        require "administrator.php";
+        require "../templates/page_parts/administrator/administrator.php";
     }else{
-        require "auth.php"; 
+        require "../templates/page_parts/administrator/auth.php";
     }
 
 ?>

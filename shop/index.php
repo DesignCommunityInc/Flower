@@ -3,9 +3,9 @@
 <head>
     <title>Flower</title>
 
-    <link rel="stylesheet" type="text/css" href="/wwwroot/css/slider.css" />
-    <link rel="stylesheet" type="text/css" href="/wwwroot/css/menu.css" />
-    <link rel="stylesheet" type="text/css" href="/wwwroot/css/viewport.css" />
+    <link rel="stylesheet" type="text/css" href="wwwroot/css/slider.css" />
+    <link rel="stylesheet" type="text/css" href="wwwroot/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="wwwroot/css/viewport.css" />
     <?php
     $root = "../";
     require_once($root . "templates/layout.php");

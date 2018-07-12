@@ -16,7 +16,7 @@
     <div class="auth_container">
         <div class="auth">
             <label>Flower</label>
-            <form method="POST" action="https://Flower/administrator/">
+            <div>
                 <label>
                     <input type="text" placeholder="Логин" name="login" id="login" value="<?php if (isset($login)) echo $login; ?>"/>
                 </label>
@@ -24,7 +24,7 @@
                     <input type="password" placeholder="Пароль" name="password" id="password"/>
                 </label>
                 <input class="button" type="submit" value="Войти" name="submit" id="submit"/>
-            </form>
+            </div>
             <?php
                 foreach ($errors as $ts){
                     echo $ts;

@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/product/viewport.css">
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/viewport.css">
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/custom_select.css">
-    <script src="/wwwroot/js/CustomSelect.js"></script>
+    <script src="/wwroot/js/CustomSelect.js"></script>
     <script src="/wwwroot/js/DescTrigger.js"></script>
 </head>
 <body>

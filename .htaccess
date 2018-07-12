@@ -1,15 +1,4 @@
-﻿RewriteEngine On
-
-# Протокол https, если он не назначен
-
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]	
-
-#Изменение положения index
-
-DirectoryIndex shop/index.php
-
-# Запрет на просмотр содержимого папок
-
-Options All -Indexes
-
+﻿<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule ^(.*)$ shop/$1 [L]
+</IfModule>

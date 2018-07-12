@@ -7,6 +7,13 @@
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/Administrator/adm.css" />
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/_Layout.css" />
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/effects.css" />
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="/wwwroot/js/Ajax.js"></script>
+
 </head>
 <body>
     <header>
