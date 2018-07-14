@@ -5,7 +5,8 @@
     <title>Flower</title>
     <?php
     $root = "../../";
-    require($root . "templates/layout.php");
+    require_once($root . "templates/layout.php");
+    require_once($root . "templates/queries/functions.php");
 
     $url = "https://vk.com/doc103959133_469378964?hash=9ca351008bffbf2a22&dl=f53832525e489cc483";
     $title = "Flower – интернет магазин";
@@ -23,8 +24,8 @@
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/product/viewport.css">
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/viewport.css">
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/custom_select.css">
-    <script src="/wwroot/js/CustomSelect.js"></script>
-    <script src="/wwwroot/js/DescTrigger.js"></script>
+    <script src="/wwwroot/js/CustomSelect.js"></script>
+    <script src="/wwwroot/js/ProductScript.js"></script>
 </head>
 <body>
     <?php

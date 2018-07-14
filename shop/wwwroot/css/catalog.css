@@ -1,4 +1,5 @@
-﻿.wrapper {
+﻿@charset "utf-8";
+.wrapper {
     display: block;
     position: relative;
     max-width: var(--width-min);
@@ -14,38 +15,63 @@
     height: 100%;
     overflow: hidden;
 }
-    .container img{
+    .container img {
         position: absolute;
         z-index: 1;
+        transition: var(--transition-link);
     }
     .container .gradient {
         display: block;
         position: absolute;
         height: 100%;
         width: 100%;
-        opacity: .5;
+        opacity: .2;
         background: var(--gradient-default);
         z-index: 2;
     }
     .container .con_item {
+        border-radius: 5px;
+        overflow: hidden;
         cursor: pointer;
         transition: var(--transition-link);
     }
+.con_item::after {
+    opacity: 1;
+    content: attr(attr-data);
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: -50px;
+    /*background: var(--gradient-default);*/
+    color: white;
+    font-size: var(--font-size-title);
+    text-transform: lowercase;
+    text-align: center;
+    line-height: 48px;
+    z-index: 4;
+    transition: var(--transition-link);
+}
 .con_item:hover .gradient {
-    opacity: .1;
+    opacity: .8;
     transition: var(--transition-link);
 }
 .con_item:hover {
+    border-radius: 0 0 20px 20px;
     box-shadow: var(--box-shadow-buttonShadow);
     transition: var(--transition-link);
+    /*border-radius: 20px;*/
 }
+    .con_item:hover::after {
+        transform: translateY(-48px);
+        transition: var(--transition-link);
+    }
 .face {
     display: block;
     position: absolute;
     width: 30%;
     height: 35%;
-    border-radius: 20px 0 0 0;
-    overflow: hidden;
+    border-radius: 20px 10px 10px 10px!important;
 }
     .face img {
         transform: translateX(-250px);
@@ -57,8 +83,7 @@
     width: 69%;
     height: 15%;
     left: 31%;
-    border-radius: 0 20px 0 0;
-    overflow: hidden;
+    border-radius: 10px 20px 10px 10px!important;
 }
     .body img {
         /*transform: translateY(-200px);*/
@@ -72,7 +97,6 @@
     height: 45%;
     top: 15.8%;
     left: 31%;
-    overflow: hidden;
 }
     .hands img {
         transform: translateX(-450px);
@@ -85,7 +109,6 @@
     height: 35%;
     top: 15.8%;
     left: 68%;
-    overflow: hidden;
 }
     .feet img {
         transform: translateX(-100px);
@@ -98,7 +121,6 @@
     height: 30%;
     top: 51.6%;
     left: 68%;
-    overflow: hidden;
 }
 
 .any2 {
@@ -108,7 +130,6 @@
     height: 25%;
     top: 35.8%;
     left: 0%;
-    overflow: hidden;
 }
 
 .any3 {
@@ -118,7 +139,6 @@
     height: 20.1%;
     top: 61.5%;
     left: 0%;
-    overflow: hidden;
 }
 
 .any4 {
@@ -128,6 +148,5 @@
     height: 17.6%;
     top: 82.3%;
     left: 0%;
-    border-radius: 0 0 20px 20px;
-    overflow: hidden;
+    border-radius: 10px 10px 20px 20px !important;
 }

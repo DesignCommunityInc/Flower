@@ -2,7 +2,7 @@
 
     //require "queries/db.php";
 
-    require_once ("queries/fishtext.php");
+    //require_once ("queries/fishtext.php");
 
     //<meta name="viewport" content="width=device-width, initial-scale=1">
 

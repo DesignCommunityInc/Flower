@@ -1,4 +1,13 @@
 ﻿<IfModule mod_rewrite.c>
-	RewriteEngine on
-	RewriteRule ^(.*)$ shop/$1 [L]
+  
+# flower's directory
+RewriteEngine on
+RewriteRule ^(.*)$ shop/$1 [L]
+
+RedirectPermanent shop/ https://Flower
+
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 </IfModule>

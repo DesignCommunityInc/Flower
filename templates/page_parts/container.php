@@ -1,3 +1,14 @@
+<?php 
+
+    $news = array();
+    $sales = array();
+    $seasons = array();
+
+    $_POST["action"] = "fill";
+
+    require_once($root . "templates/queries/manager.php");
+
+?>
   <section class="main_container">
             <!-- SEARCH -->
             <section class="search_wrapper">
@@ -24,17 +35,17 @@
                     </div>
                     <div class="body">
                         <?php
-                        for($i = 0; $i < 12; $i++)
+                        foreach($news as $product)
                         {
                             echo
-                            "<a href='https://Flower/shop/product/' class='product'>" .
-                            "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
+                            "<a href='https://Flower/shop/product/?id=" . $product["Id"] . "' class='product'>" .
+                            "<img src='" . $product["image_path"] . "'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
                             "</div>" .
                             "<span class='line'></span>" .
-                            "<p>Бальзам для рук SOS восстановление</p>" .
-                            "<label name='price' class='price'>720 ₽</label>" .
+                            "<p>" . $product["name"] . "</p>" .
+                            "<label name='price' class='price'>" . $product["price"] . "</label>" .
                             "<div class='gradient'></div>" .
                             "</a>";
                         }

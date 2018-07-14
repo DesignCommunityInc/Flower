@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" accesskey="makeup" />
+    <meta charset="utf-8"/>
     <title>Flower</title>
     <?php
     $root = "../../";
@@ -13,35 +13,35 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <div class="face con_item"> 
+            <div class="face con_item" attr-data="Косметика для лица"> 
                 <img src="/wwwroot/images/icons/catalog_images/face.jpg"/> 
                 <div class="gradient"></div>
             </div>
-            <div class="body con_item">
+            <div class="body con_item" attr-data="Косметика для тела и средства по уходу">
                 <img src="/wwwroot/images/icons/catalog_images/body.jpg" />
                 <div class="gradient"></div>
             </div>
-            <div class="hands con_item">
+            <div class="hands con_item" attr-data="Косметическа и средства для рук">
                 <img src="/wwwroot/images/icons/catalog_images/hands.png" />
                 <div class="gradient"></div>
             </div>
-            <div class="feet con_item">
+            <div class="feet con_item" attr-data="уход и косметика для ног">
                 <img src="/wwwroot/images/icons/catalog_images/feet.jpg" />
                 <div class="gradient"></div>
             </div>
-            <div class="any1 con_item">
+            <div class="any1 con_item" attr-data="Косметика для лица">
                 <!--<img src="/wwwroot/images/icons/catalog_images/feet.jpg" />-->
                 <div class="gradient"></div>
             </div>
-            <div class="any2 con_item">
+            <div class="any2 con_item" attr-data="Косметика">
                 <!--<img src="/wwwroot/images/icons/catalog_images/feet.jpg" />-->
                 <div class="gradient"></div>
             </div>
-            <div class="any3 con_item">
+            <div class="any3 con_item" attr-data="Косметика">
                 <!--<img src="/wwwroot/images/icons/catalog_images/feet.jpg" />-->
                 <div class="gradient"></div>
             </div>
-            <div class="any4 con_item">
+            <div class="any4 con_item" attr-data="Косметика">
                 <!--<img src="/wwwroot/images/icons/catalog_images/feet.jpg" />-->
                 <div class="gradient"></div>
             </div>

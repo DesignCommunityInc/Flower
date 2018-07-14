@@ -1,6 +1,15 @@
-﻿<?php
+<?php
+function db_query($string, $db)
+{
+     $mass = array();
+     $query = $string;
+                $action = mysqli_query($db, $query);
 
-
+                while($item = mysqli_fetch_assoc($action)){
+                    $mass[] = $item;
+                }
+    return $mass;
+}
 
 function fishtext($arg = 0)
 {

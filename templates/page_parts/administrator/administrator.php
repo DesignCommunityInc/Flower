@@ -114,5 +114,13 @@
             </div>
         </div>
     </header>
+     <script type="text/javascript">
+        document.addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode === 27) {
+                document.getElementById("quit").click();
+            }
+        }); 
+    </script>
 </body>
 </html>

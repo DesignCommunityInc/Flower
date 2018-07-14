@@ -5,22 +5,8 @@
          var login = $('#login').val();
          var password = $('#password').val();
         
-             $.ajax({
-                 url: "/administrator/index.php",
-                 type: 'POST',
-                 data: {
-                     login: login,
-                     password: password,
-                     submit: true
-                 },
-             }).done(function (data) {
-                 onAjaxSuccess(data);
-             }).always(function (dataError) {
-             });
-        
-
+         administrator_auth(login, password);
     });
-
 
     // Administrator authentification_exit 
     $('#quit').on('click', function () {
