@@ -8,6 +8,17 @@
     <link rel="stylesheet" type="text/css" href="wwwroot/css/viewport.css" />
     <?php
     $root = "../";
+
+    $news = array();
+    $sales = array();
+    $seasons = array();
+    $categories = array();
+    $slider = array();
+    $footer = array();
+
+    $_POST["action"] = "fill";
+
+    require_once($root . "templates/queries/manager.php");
     require_once($root . "templates/layout.php");
     require_once($root . "templates/page_parts/header.php");
     ?>

@@ -1,14 +1,3 @@
-<?php 
-
-    $news = array();
-    $sales = array();
-    $seasons = array();
-
-    $_POST["action"] = "fill";
-
-    require_once($root . "templates/queries/manager.php");
-
-?>
   <section class="main_container">
             <!-- SEARCH -->
             <section class="search_wrapper">

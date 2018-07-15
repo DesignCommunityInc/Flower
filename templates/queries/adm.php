@@ -42,7 +42,7 @@
 
             if(empty($errors)){
                 $_SESSION["user"]["name"] = $login;
-            
+                
             }
             echo "success";
             exit();

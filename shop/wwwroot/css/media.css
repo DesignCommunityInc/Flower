@@ -6,7 +6,8 @@
         --font-size-normal: 18pt;
         --font-size-title: 20pt;
     }
-    .navbar_one .links {
+    .navbar_one .links li:nth-child(2),
+    .navbar_one .links li:nth-child(3) {
         display: none;
     }
     .categories{
@@ -41,6 +42,7 @@
     html {
         --margin-fromScreen: 55px !important;
         transition: var(--transition-link);
+        --font-size-title: var(--font-size-normal);
     }
 }
 @media only screen and (min-width: 1281px) { /* ÿ»–»Õ¿ ¡ŒÀ‹ÿ≈ 1280 */
