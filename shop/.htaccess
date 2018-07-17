@@ -1,12 +1,18 @@
-﻿<IfModule mod_rewrite.c>
-  
-# flower's directory
-RewriteEngine on
-RewriteRule ^(.*)$ shop/$1 [L]
+﻿RewriteEngine On
 
-#RedirectPermanent shop/ https://Flower
+# Протокол https, если он не назначен
+
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 #RewriteCond %{HTTPS} off
 #RewriteCond %{HTTP:X-Forwarded-Proto} !https
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
+
+# Убрать index.php с url
+
+RewriteRule ^index.php$ / [QSA,R]
+
+# При ошибке выводить страницу ошибки
+
+ErrorDocument 404 /404.php

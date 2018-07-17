@@ -6,7 +6,7 @@
     <?php
     $root = "../../";
     require_once($root . "templates/layout.php");
-    require_once($root . "templates/queries/manager.php"); 
+    require_once($root . "templates/queries/functions.php");
 
     $url = "https://vk.com/doc103959133_469378964?hash=9ca351008bffbf2a22&dl=f53832525e489cc483";
     $title = "Flower – интернет магазин";
@@ -29,7 +29,7 @@
 </head>
 <body>
     <?php
-    require $root . "templates/page_parts/header.php";
+    include $root . "templates/page_parts/header.php";
     ?>
     <section class="main_viewport">
         <div class="header">
