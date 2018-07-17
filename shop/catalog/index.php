@@ -6,7 +6,8 @@
     <?php
     $root = "../../";
     require($root . "templates/layout.php");
-    include $root . "templates/page_parts/header.php";
+    require_once($root . "templates/queries/manager.php");
+    require_once $root . "templates/page_parts/header.php";
     ?>
     <link rel="stylesheet" type="text/css" href="/wwwroot/css/catalog.css" />
 </head>

@@ -140,8 +140,8 @@
     background: var(--gradient-dynamic) !important;
 
 }*/
-.dynamic_header .line {
-    background: #6CB3FF!important;
+.dynamic_line{
+    background: var(--color-dynamic)!important;
 }
     .viewport .body {
         display: block;

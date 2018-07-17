@@ -167,7 +167,12 @@ function category_function(state) {
 
         var ctg = $('.categories');
         var categories = $('.categories .category');
-        var height = (categories.length * 60 + 36 /* margin-top */ + 100 /* design-part */);
+        if(categories.length <= 8) 
+            var height = (categories.length * 55 + 25 /* margin-top */ + 100 /* design-part */);
+        else{
+            var height = (categories.length * 55 + 25 /* margin-top */);
+            $(".list_container").css({top: "-100px"});
+        }
         $('.categories').animate({
             height: height.toString() + "px",
             textIndent: 20

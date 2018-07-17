@@ -100,7 +100,7 @@
                 <div class="content_wrapper" id="summer">
                     <div class="header dynamic_header">
                         <label class="view_label">Летние товары</label>
-                        <span class="line"></span>
+                        <span class="line dynamic_line"></span>
                     </div>
 
                     <div class="body">
@@ -108,7 +108,7 @@
                         foreach($seasons as $product)
                         {
                             echo
-                            "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product'>" .
+                            "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product dynamic_product'>" .
                             "<img src='" . $product["image_path"] . "'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .

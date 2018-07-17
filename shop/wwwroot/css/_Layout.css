@@ -21,14 +21,15 @@ html {
     --box-shadow-lightShadow: 0 6px 30px 0px var(--color-darkLight);
     /*font*/
     --font-size-superTitle: 26pt;
-    --font-size-title: 16pt;
+    --font-size-title: 19px;
     --font-size-normal: 14pt;
     --font-size-mini: 12pt;
     /* design */
     --contrast-default: contrast(1.2);
     --gradient-default: linear-gradient(to right, #ef4b6d, #ff8261);
-    --gradient-dynamic: linear-gradient(to right, #82FF91, #6CB3FF);
+    --gradient-dynamic: linear-gradient(360deg, #82FF91, #6CB3FF);
     --color-dynamic: #6CB3FF;
+    --color2-dynamic: #6CB3FF;
 }
 body {
     filter: contrast(1);
@@ -212,11 +213,13 @@ a {
     background: var(--gradient-dynamic)!important;
 }
 .dynamic_product .line {
-    background: #6CB3FF;
+    background: var(--color-dynamic)!important;
 }
 .dynamic_product .tocart {
     background: var(--gradient-dynamic) !important;
+    filter: contrast(0.9)!important;
 }
+
             .product .tocart {
                 cursor: pointer;
                 display: block;
@@ -278,7 +281,7 @@ a {
         .product:hover span {
             left: 15px;
             width: 150px;
-            background: var(--color-primaryLight);
+            background: var(--color-primaryLight)!important;
             transition: var(--transition-link);
         }
         .product:hover p {
