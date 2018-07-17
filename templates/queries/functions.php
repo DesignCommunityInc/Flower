@@ -10,7 +10,34 @@ function db_query($string, $db)
                 }
     return $mass;
 }
+function db_qupdate($string, $db)
+{
+        $query = $string;
+        $action = mysqli_query($db, $query);
+}
+function user_verify($db, $login, $password)
+{
+     $query = "SELECT `Id`, `password_hash`, `username` FROM `admins` WHERE `username` = '$login'";
+        $action = mysqli_query($db, $query);
+        $user = array();
 
+        while($item = mysqli_fetch_assoc($action)){
+            $user[] = $item;
+        }
+
+        if( password_verify( $password, $user[0]["password_hash"] ) == false ){
+            $errors[] = "Пароль не верный!";
+        }
+
+        if (count($user) == 0){
+            $errors[] = "Пользователь не найден<br>";
+        };
+
+        if(empty($errors)){
+            return true;
+        }
+        return false;
+}
 function fishtext($arg = 0)
 {
     $text = array();

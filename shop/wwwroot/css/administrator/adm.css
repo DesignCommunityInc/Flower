@@ -6,6 +6,12 @@
     top: 0;
     background: var(--color-primaryLight);
 }
+.title_label {
+    line-height: 40px;
+    font-size: var(--font-size-title) !important;
+    font-weight: bold;
+    color: var(--color-primaryLight);
+}
 #first_section {
     display: block;
     position: relative;
@@ -196,9 +202,6 @@
         position: relative;
         max-width: 200px;
         margin-top: 20px;
-        line-height: 40px;
-        font-size: var(--font-size-title);
-        font-weight: bold;
     }
     #fifth_section #prod_table_label {
         display: block;
@@ -206,9 +209,6 @@
         max-width: var(--width-min);
         top: 0;
         margin-left: 250px;
-        line-height: 40px;
-        font-size: var(--font-size-title);
-        font-weight: bold;
     }
     /*#fifth_section #pagination_label {
         display: block;
@@ -227,9 +227,9 @@
     display: table;
     position: relative;
     max-width: var(--width-max);
-    height: 1000px;
     padding-left: var(--margin-fromScreen);
     padding-right: var(--margin-fromScreen);
+    margin: auto;
 }
 .viewport_section {
     display: table-cell;
@@ -245,7 +245,7 @@
 #v_s_second {
     width: 100%;
 }
-#v_s_second .line{
+#v_s_second > .line{
     width: 100%;
     top: 60px;
     background: var(--color-fore-darkLight);
@@ -282,6 +282,9 @@
     .table_btn:hover {
         background: var(--color-primary)!important;
         color: var(--color-primaryLight)!important;
+    }
+    .alignment{
+        vertical-align: top!important;
     }
 .state {
     /*background: #00FF7F;*/
@@ -336,8 +339,209 @@
     color: var(--color-primary)!important;
 }
 
-/*#v_s_third {
-    width: 320px;
-    width: calc((var(--width-max) - var(--width-min)) / 2);
-    border: 1px dotted #323232;
-}*/
+/* asd asd asd asd asd asd asd asd asd asd */
+#sixth_section {
+    display: block;
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-left: var(--margin-fromScreen);
+    padding-right: var(--margin-fromScreen);
+}
+
+    #sixth_section .add_label {
+        display: block;
+        position: relative;
+        margin-top: 20px;
+    }
+    #sixth_section .add_btn {
+        position: absolute;
+        width: 150px;
+        line-height: 30px;
+        height: 30px;
+        top: 5px;
+        margin-left: 250px;
+        font-size: var(--font-size-mini);
+        background: var(--color-primary);
+    }
+    #sixth_section .add_btn:hover {
+        box-shadow: 0 5px 25px -10px #646464!important;
+        transition: var(--transition-link)!important;
+    }
+
+.menu_label {
+    line-height: 40px;
+    font-size: var(--font-size-normal) !important;
+    font-weight: bold;
+    color: var(--color-primaryLight);
+    margin-top: 40px;
+}
+
+.radio_container{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.radio_item {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+.radio_item span{
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--color-primary);
+    border-radius: 10px;
+}
+    .radio_item label {
+        cursor: pointer;
+        position: relative;
+        width: 10px;
+        height: 10px;
+    }
+    .active_radio span{
+        background: var(--color-primary);
+    }
+    .active_radio label {
+        color: var(--color-primary);
+    }
+
+.edit_container {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.cart_view {
+    display: block;
+    position: relative;
+    width: 345px;
+    height: 500px;
+    box-shadow: var(--box-shadow-buttonShadow);
+    margin: auto;
+    margin-bottom: 80px;
+    vertical-align: middle;
+}
+    .cart_view form {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 570px;
+        overflow: hidden;
+    }
+    .cart_view form input {
+        display: block;
+        position: relative;
+        width: 345px;
+        margin: 0 auto;
+        outline: none;
+        border: none;
+    }
+        .cart_view form input[type=button] {
+            display: block;
+            position: relative;
+            width: 40%;
+            margin-top: 50%;
+            font-size: var(--font-size-mini);
+            text-transform: lowercase;
+            font-weight: bold;
+            text-align: center;
+            background: var(--gradient-default);
+        }
+        .cart_view > span {
+            display: block;
+            position: absolute;
+            width: 50%;
+            top: 70%;
+            left: 20px;
+            background: var(--color-primary);
+        }
+    .cart_view form textarea {
+        display: block;
+        position: relative;
+        resize: none;
+        border: none;
+        margin-top: 45%;
+        left: 20px;
+        font-size: var(--font-size-mini);
+        font-weight: bold;
+    }
+    .cart_view form input[name="price"] {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 40px;
+        margin-top: 2%;
+        right: 20px;
+        text-align: right;
+        text-transform: lowercase;
+        font-size: var(--font-size-mini);
+        font-weight: bold;
+    }
+    .cart_view form input[name="IsSale"] {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        bottom: 20px !important;
+        right: 0;
+        padding-right: 50px;
+        text-align: right;
+        text-transform: lowercase;
+        font-size: var(--font-size-mini);
+        font-weight: bold;
+        color: var(--color-primary);
+    }
+    .cart_view form .line {
+        display: block;
+        position: absolute;
+        width: 20%;
+        height: 1px;
+        top: unset;
+        bottom: 20px;
+        left: unset;
+        right: 20px;
+        background: var(--color-primary);
+    }
+
+    .cart_view form .radio_sale {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 20px;
+        top: unset;
+        bottom: 30px;
+        right: 20px;
+        border: 1px solid var(--color-primary);
+    }
+        .cart_view form .radio_sale::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            top: 7.5px;
+            left: 7.5px;
+            border-radius: 10px;
+            background: transparent;
+            transition: .1s ease-in-out;
+        }
+        .cart_view form .radio_sale:hover {
+            background: var(--color-darkLight);
+            transition: .1s ease-in-out;
+        }
+.radio_sale_active::after {
+    width: 13px !important;
+    height: 13px !important;
+    top: 1px !important;
+    left: 1px !important;
+    background: var(--color-primary)!important;
+    transition: .1s ease-in-out;
+}

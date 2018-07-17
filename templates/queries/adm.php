@@ -2,26 +2,26 @@
 
 //$data = $_POST;
 
-    $param = $data["action"];
+    $param = $post["action"];
+    
     switch($param)
     {
         case "quit":
         {
             session_destroy();
-            json_encode("success");
+            echo("success");
             exit();
-            break;
-        }
+        } break;
         case "auth":
         {
-            $login = $data["login"];
-            $password = $data["password"];
+            $login = $post["login"];
+            $password = $post["password"];
 
             if($login == ""){
-                $errors[] = "Вы не ввели логин!<br>"; 
+                $errors[] = "Р’С‹ РЅРµ РІРІРµР»Рё Р»РѕРіРёРЅ!<br>"; 
             } 
             if($password == ""){
-                $errors[] = "Вы не ввели пароль!<br>";
+                $errors[] = "Р’С‹ РЅРµ РІРІРµР»Рё РїР°СЂРѕР»СЊ!<br>";
             }
 
             $query = "SELECT `Id`, `password_hash`, `username` FROM `admins` WHERE `username` = '$login'";
@@ -33,21 +33,43 @@
             }
 
             if( password_verify( $password, $user[0]["password_hash"] ) == false ){
-                $errors[] = "Пароль не верный!";
+                $errors[] = "РџР°СЂРѕР»СЊ РЅРµ РІРµСЂРЅС‹Р№!";
             }
 
             if (count($user) == 0){
-                $errors[] = "Пользователь не найден<br>";
+                $errors[] = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ РЅР°Р№РґРµРЅ<br>";
             };
 
             if(empty($errors)){
                 $_SESSION["user"]["name"] = $login;
-                
+                $_SESSION["user"]["password"] = $password;
+                $_SESSION["user"]["succeed"] = true;
             }
             echo "success";
             exit();
-            break;
-        }
+        } break;
+        case "main_page":
+        {
+            $_SESSION["user"]["state"] = $state;
+            echo "success";
+            exit();
+        } break;
+        case "add_product": 
+        {
+            //$_SESSION["user"]["state"] = $state;
+            // $title from index, $db from index (required);
+            $query = "db_query";
+            $mass = $query("SELECT `name` FROM `products` WHERE `name` = '$title'", $db);
+
+            if(count($mass) == 0)
+            {
+                $query = "db_update";
+                $query("INSERT INTO `products` (`name`, `price`, `image_path`) VALUES('$title', '$price', '/wwwroot/images/products/$image') ", $db);
+            }
+
+            echo "success";
+            exit();
+        } break;
     }
 
 ?>

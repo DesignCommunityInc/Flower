@@ -1,4 +1,4 @@
-﻿ <footer>
+ <footer>
       <div class="footer_container">
           <div class="any_question">
               <label> Остались вопросы?</label>

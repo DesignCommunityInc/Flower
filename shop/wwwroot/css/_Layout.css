@@ -83,8 +83,8 @@ a {
     transition: var(--transition-low);
 }
     .button:hover {
-        box-shadow: var(--box-shadow-buttonShadow);
-        transition: var(--transition-link);
+        box-shadow: var(--box-shadow-buttonShadow)!important;
+        transition: var(--transition-link)!important;
     }
 .default_container {
     display: block;

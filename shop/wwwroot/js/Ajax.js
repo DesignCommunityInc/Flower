@@ -10,27 +10,35 @@
 
     // Administrator authentification_exit 
     $('#quit').on('click', function () {
-
-        $.ajax({
-            url: "/administrator/index.php",
-            method: 'POST',
-            data: { action: "quit" },
-
-        }).done(function (data) {
-            onAjaxSuccess(data);
-
-        }).always(function (dataError) {
-        });
+        administrator_exit();
     });
 });
-
-function onAjaxSuccess(data) {
-    if (data = "success")
-        window.location.reload(true);
-}
 
 function splitString(stringToSplit, separator) {
     var arrayOfStrings = stringToSplit.split(separator);
 
     return arrayOfStrings;
+}
+
+
+function cart_view_form_Sent() {
+    $('#cart_view_form').submit(function (e) {
+        var $form = $(this);
+        $.ajax({
+            type: $form.attr('method'),
+            url: $form.attr('action'),
+            data: $form.serialize()
+        }).done(function () {
+            onAjaxSuccess_reload(data)
+            }).fail(function () {
+                alert('error');
+        });
+        //отмена действия по умолчанию для кнопки submit
+        e.preventDefault();
+    });
+};
+
+function onAjaxSuccess_reload(data) {
+    if (data == "success")
+        window.location.replace("https://Flower/shop/administrator/");
 }

@@ -1,0 +1,10 @@
+﻿RewriteEngine On
+
+#Изменение положения index
+
+DirectoryIndex index.php
+
+# Протокол https, если он не назначен
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]	

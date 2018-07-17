@@ -1,44 +1,41 @@
-﻿    // Administrator authentification 
-    function administrator_auth(log, pass) {
-         var login = log;
-         var password = pass;
+﻿// Administrator authentification 
+function administrator_auth(log, pass) {
+    var login = log;
+    var password = pass;
         
-             $.ajax({
-                 url: "/administrator/index.php",
-                 type: 'POST',
-                 data: {
-                     action: "auth",
-                     login: login,
-                     password: password
-                 },
-             }).done(function (data) {
-                 onAjaxSuccess_reload(data);
-             }).always(function (dataError) {
-             });
-        
-
+    $.ajax({
+        url: "/administrator/index.php",
+        type: 'POST',
+        data: {
+            action: "auth",
+            login: login,
+            password: password,
+            userState: "entered"
+        },
+    }).done(function (data) {
+        onAjaxSuccess_reload(data);
+    }).always(function (dataError) {
+    });
 };
 
 
-//    // Administrator authentification_exit 
-//    $('#quit').on('click', function () {
+// Administrator authentification_exit
+function administrator_exit() {
+    $.ajax({
+        url: "/administrator/index.php",
+        method: 'POST',
+        data: { action: "quit" },
 
-//        $.ajax({
-//            url: "/administrator/index.php",
-//            method: 'POST',
-//            data: { action: "quit" },
+    }).done(function (data) {
+        onAjaxSuccess_reload(data);
 
-//        }).done(function (data) {
-//            onAjaxSuccess(data);
-
-//        }).always(function (dataError) {
-//        });
-//    });
-//});
+    }).always(function (dataError) {
+    });
+};
 
 function onAjaxSuccess_reload(data) {
     if (data == "success")
-        window.location.reload(true);
+        window.location.replace("https://Flower/shop/administrator/");
 }
 
 //function splitString(stringToSplit, separator) {

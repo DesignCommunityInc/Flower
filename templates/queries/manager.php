@@ -37,7 +37,7 @@
                 //}
 
                 if (count($_news) == 0 || count($_sales) == 0 || count($_seasons) == 0){
-                    $errors[] = "Ошибка при поиске товара<br>";
+                    $errors[] = "РћС€РёР±РєР° РїСЂРё РїРѕРёСЃРєРµ С‚РѕРІР°СЂР°<br>";
                 };
 
                 if(empty($errors)){
