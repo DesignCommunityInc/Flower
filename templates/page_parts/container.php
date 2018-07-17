@@ -27,13 +27,13 @@
                         foreach($news as $product)
                         {
                             echo
-                            "<a href='https://Flower/shop/product/?id=" . $product["Id"] . "' class='product'>" .
+                            "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product'>" .
                             "<img src='" . $product["image_path"] . "'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
                             "</div>" .
                             "<span class='line'></span>" .
-                            "<p>" . $product["name"] . "</p>" .
+                            "<p>" . $product["title"] . "</p>" .
                             "<label name='price' class='price'>" . $product["price"] . "</label>" .
                             "<div class='gradient'></div>" .
                             "</a>";
@@ -73,18 +73,17 @@
                     </div>
                     <div class="body">
                         <?php
-                        for($i = 0; $i < 12; $i++)
+                        foreach($sales as $product)
                         {
                             echo
-                            "<a href='https://Flower/product.php' class='product'>" .
-                            "<label class='product_type'>Скидка</label>" .
-                            "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
+                            "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product'>" .
+                            "<img src='" . $product["image_path"] . "'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
                             "</div>" .
                             "<span class='line'></span>" .
-                            "<p>Бальзам для рук SOS восстановление</p>" .
-                            "<label name='price' class='price'>720 ₽</label>" .
+                            "<p>" . $product["title"] . "</p>" .
+                            "<label name='price' class='price'>" . $product["price"] . "</label>" .
                             "<div class='gradient'></div>" .
                             "</a>";
                         }
@@ -106,18 +105,17 @@
 
                     <div class="body">
                         <?php
-                        for($i = 0; $i < 12; $i++)
+                        foreach($seasons as $product)
                         {
                             echo
-                            "<a href='https://Flower/product.php' class='product dynamic_product'>" .
-                            "<label class='product_type'>Скидка</label>" .
-                            "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
+                            "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product'>" .
+                            "<img src='" . $product["image_path"] . "'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
                             "</div>" .
                             "<span class='line'></span>" .
-                            "<p>Бальзам для рук SOS восстановление</p>" .
-                            "<label name='price' class='price'>720 ₽</label>" .
+                            "<p>" . $product["title"] . "</p>" .
+                            "<label name='price' class='price'>" . $product["price"] . "</label>" .
                             "<div class='gradient'></div>" .
                             "</a>";
                         }

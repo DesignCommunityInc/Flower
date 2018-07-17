@@ -1,4 +1,15 @@
+<?php
+    $fill = "header_fill";
 
+    $categories = $fill($db);
+
+    // foreach($_categories as $cats){
+    //     $id = $cats["ID"];
+    //     $qq = "SELECT `ID`, `sub_name`,`category_id` FROM `sub_categories` WHERE `category_id` = '$id'";
+    //     $_categories["subcat"] = $query($qq, $db);
+    // };
+
+?>
 <header>
     <nav>
         <ul class="navbar_one">
@@ -38,89 +49,22 @@
                     <span name="title"></span>
                 </div>
                 <ul id="categories">
-                    <li>
-                        <label class="category">Восковая депиляция</label>
-                        <div class="list_container">
-                            <label name="title">Восковая депиляция</label>
-                            <span name="title"></span>
-                            <ul class="list">
-                                <li>
-                                    <a href="#">
-                                        <label>Депиляция</label>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <label class="category">Шугаринг</label>
-                        <div class="list_container">
-                            <label name="title">Шугаринг</label>
-                            <span name="title"></span>
-                            <ul class="list">
-                                <li>
-                                    <a href="#">
-                                        <label>Паста для шугаринга</label>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <label>Средства до и после шугаринга</label>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <label>Аксессуары для шугаринга</label>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <label>Дополнительный уход</label>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <label class="category">Электро и фотоэпиляция</label>
-                        <div class="list_container">
-                            <label name="title">Электро и фотоэпиляция</label>
-                            <span name="title"></span>
-                            <ul class="list">
-                                <li>
-                                    <label>Электроэпиляция</label>
-                                </li>
-                                <li>
-                                    <label>Фотоэпиляция</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <label class="category">Наращивание ресниц</label>
-                        <div class="list_container">
-                            <label name="title">Наращивание ресниц</label>
-                            <span name="title"></span>
-                            <ul class="list">
-                                <li>
-                                    <label>Ресницы</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <label class="category">Косметика для лица</label>
-                        <div class="list_container">
-                            <label name="title">Косметика для лица</label>
-                            <span name="title"></span>
-                            <ul class="list">
-                                <li>
-                                    <label>Косметика для лица</label>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
+                    <?php
+                        foreach($categories as $id => $value){
+                            echo
+                            "<li><label class='category'>".$value[0]."</label>".
+                            "<div class='list_container'>".
+                            "<label name='title'>".$value[0]."</label>".
+                            "<span name='title'></span>".
+                            "<ul class='list'>";
+                            foreach($value["sub"] as $s){
+                                echo
+                                "<li><a href='".$s["ID"]."'><label>".$s["category_name"]."</label></a></li>";
+                            }
+                            echo
+                            "</ul></div></li>";
+                        }
+                    ?> 
                 </ul>
             </li>
             <li name="bag" id="cart">
