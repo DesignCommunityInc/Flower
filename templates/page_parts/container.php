@@ -1,25 +1,9 @@
   <section class="main_container">
-            <!-- SEARCH -->
-            <section class="search_wrapper">
-                <div class="search">
-                    <input type="text" placeholder="" id="src_input" />
-                    <div id="ripple" class="centered">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                    </div>
-
-                    <div class="src_circle"></div>
-                    <img src="/wwwroot/images/icons/src.png" class="src_img" width="38" />
-
-                </div>
-                <p>Поиск на сайте</p>
-            </section>
             <!-- VIEWPORT -->
             <section class="viewport">
                 <div class="content_wrapper" id="news">
                     <div class="header">
-                        <label class="view_label">Новинки каталога</label>
+                        <label class="view_label reccomended_label">Мы рекомендуем</label>
                         <span class="line"></span>
                     </div>
                     <div class="body">
@@ -42,41 +26,45 @@
                 </div>
             </div>
 
-                <section class="daily_share">
-                    <div class="daily_image">
-                        <img src='/wwwroot/images/rotate_in_motion.png' draggable="false" />
-                        <img src='/wwwroot/images/lines.png' draggable="false"/>
-                    </div>
-                  <!--<div class="container">
-                    <?php
-                    for($i = 0; $i < 3; $i++)
-                    {
-                        echo
-                        "<div class='share_item'>" .
-                        "<div class='share_bg1'></div>" .
-                        "<div class='share_bg2'></div>" .
-                        "<div class='share_circle'>" .
-                        "<label class='share_number'>20</label>" .
-                        "<label>%</label>" .
-                        "</div>" .
-                        "<p class='share_description'>На товары категории косметика для тела</p>" .
-                        "<label class='share_date'>1 - 2 июня</label>" .
-                        "</div>";
-                    }
-                    ?>
-                  </div>-->
-              </section>
+            
                 <div class="content_wrapper" id="sales">
                     <div class="header">
-                        <label class="view_label">Скидки</label>
+                        <label class="view_label sales_label">Скидки и акции</label>
                         <span class="line" style="width: 50px;"></span>
+                    </div>
+                    <div class="market_part">
+                        <div class="big_sale_picture">
+                            <!-- <img src="/wwwroot/images/icons/catalog_images/body.jpg"/> -->
+                            <div class="big_sale_label">
+                                <label>Пора на море</label>
+                                <p>скидки на товары для загара до 40%</p>
+                            </div>
+                        </div>
+                        <div class="small_sale_picture">
+                        <label>Скидки</label>
+                            <p>каждый день</p>
+                        </div>
+                        <div class="small_sale_picture">
+                            <label>Больше</label>
+                            <p>акций для вас</p>
+                        </div>
                     </div>
                     <div class="body">
                         <?php
+                        $counter = 0;
                         foreach($sales as $product)
                         {
+                            if($counter > 3) break;
                             echo
                             "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product'>" .
+                            "<div class='sale_icon'>%</div>" . 
+                            "<div class='rate_block'>" . 
+                            "<div class='rate_star star_selected'> </div>" . 
+                            "<div class='rate_star star_selected'> </div>" . 
+                            "<div class='rate_star star_selected'> </div>" . 
+                            "<div class='rate_star'> </div>" . 
+                            "<div class='rate_star'> </div>" . 
+                            "</div>" . 
                             "<img src='" . $product["image_path"] . "'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
@@ -86,6 +74,7 @@
                             "<label name='price' class='price'>" . $product["price"] . "</label>" .
                             "<div class='gradient'></div>" .
                             "</a>";
+                            $counter++;
                         }
                         ?>
                     </div>
@@ -98,10 +87,10 @@
                     <div class="button">Побробнее</div>
                 </div>
                 <div class="content_wrapper" id="summer">
-                    <div class="header dynamic_header">
+                    <!-- <div class="header dynamic_header">
                         <label class="view_label">Летние товары</label>
                         <span class="line dynamic_line"></span>
-                    </div>
+                    </div> -->
 
                     <div class="body">
                         <?php

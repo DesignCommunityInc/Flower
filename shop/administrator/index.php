@@ -10,6 +10,11 @@
     $get = $_GET;
     $session = $_SESSION;
     $cookie = $_COOKIE;
+    
+    // 5UEYrydH5RKaKc2p2
+
+    //echo password_hash("chery123", PASSWORD_BCRYPT);
+
 
     if($post){
         if(isset($post["action"])){

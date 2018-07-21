@@ -3,26 +3,23 @@
     $(radio[0]).addClass('active');
 
     var images = $('slider img');
-    var image = 1;
+    var image = 5;
     var time = 5000;
 
     var counter = 0;
 
     var timer = setInterval(function () {
-        swipe(image);
-
         image++;
-        if (image == 5) {
+        if (image >= 5) {
             image = 1;
         }
-        //$('title').text('SidMaquillage');
+        swipe(image);       
     }, time);
 
 
     $('.slider_radio span').on('click', (function (event) {
         image = this.getAttribute('id');
         swipe(image - 0);
-        image++;
     }));
 
 

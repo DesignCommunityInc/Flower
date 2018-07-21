@@ -67,50 +67,29 @@
                     ?> 
                 </ul>
             </li>
-            <li name="bag" id="cart">
+            <li class="search_wrapper">
+                <div class="search">
+                    <input type="text" placeholder="" id="src_input" onkeydown="src_uniKeyCode(event)" onBlur="src_onBlur()"/>
+                    <div id="ripple" class="centered">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                    </div>
+
+                    <div class="src_circle">
+                        <img src="/wwwroot/images/icons/src.png" class="src_img" width="20" />
+                    </div>
+
+                </div>
+          </li>
+            <li name="bag" id="cart" attr-data="₽">
                 <img src="/wwwroot/images/icons/bag.png" width="48" />
                 <div class="cart_items_counter">2</div>
+                <div class="total_price">2 170</div>
             </li>
         </ul>
-        <div class="list_gradient"></div>
-        <div class="sub_list_gradient"></div>
-
-        <div class="cart">
-            <div class="cart_container">
-                <?php
-                for($i = 0; $i < 6; $i++)
-                {
-                    echo "<div class='product'>" .
-                    "<img src='/wwwroot/images/products/product" . ($i + 1) . ".png'>" .
-                    "<div class='tocart'>" .
-                    "<img src='/wwwroot/images/icons/bag_white.png' width='32' />" .
-                    "</div>" .
-                    "<p>Бальзам для рук SOS восстановление</p>" .
-                    "<label class='price'>720</label>" .
-                    "</div>";
-                }
-                ?>
-            </div>
-            <div class="cart_cheque">
-                <label id="summary">
-                    Итого:
-                    <strong>1440 рублей</strong>
-                </label>
-                <span></span>
-                <div class="cheque">
-                    <?php
-                    for($i = 0; $i < 6; $i++)
-                    {
-                        echo "<div id='" . $i . "'>" .
-                        "<p>Бальзам для рук SOS восстановление, супер-цена по акции, а также подарок при покупке</p>" .
-                        "<label>720 руб.</label>" .
-                        "</div>";
-                    }
-                    ?>
-                </div>
-                <input type="button" value="Перейти к оформлению" />
-            </div>
-        </div>
+        <iframe src="/cart.php"
+        class="cart_frame" id="cart_frame" scrolling="no" frameborder="no"></iframe>
     </nav>
-    <div class="borderBottom" id="borderHeader"></div>
+    <!-- <div class="borderBottom" id="borderHeader"></div> -->
 </header>

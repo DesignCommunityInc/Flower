@@ -25,14 +25,18 @@
     }
 
 
+.search_active .centered {
+    top: 1px;
+    right: -43px;
+}
 .centered {
     position: absolute;
-    top: 35px;
-    left: 25px;
+    top: 8px;
+    right: -48px;
     transition: var(--transition-link);
 }
 
-.centered_active {
+/* .centered_active {
     top: 33px;
     left: 33px;
     transition: var(--transition-link);
@@ -43,7 +47,7 @@
         height: 60%;
         width: 60%;
         transition: var(--transition-link);
-    }
+    } */
 
 #ripple {
     color: var(--color-primary);
@@ -92,7 +96,7 @@
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(.5);
         opacity: 0.0;
     }
 }
