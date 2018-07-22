@@ -61,18 +61,68 @@
         category_function("close");
         ButtonRoles["categories"] = open;
     }));
-    $(".right_cart").on('click', function(){
-        var left_pos = $('.cart_container').css("margin-left").replace("px", '');
-        $('.cart_container').animate({"margin-left": parseInt(left_pos - 500) + "px"}, 300);
 
-    });
+    var right_click = false;
+    var left_click = false;
 
-    $(".left_cart").on('click', function(){
-        var left_pos = parseInt($('.cart_container').css("margin-left").replace("px", ''));
+    $(".right_cart").mouseup(function(){
+        clearTimeout(pressTimer);
+        if(!right_click){
+            var left_pos = parseInt($('.cart_container').css("margin-left").replace("px", ''));
+            var width = parseInt($('.cart_container').css('width').replace("px", ''));
 
-        $('.cart_container').animate({"margin-left": (left_pos + 500) + "px"}, 300);
+            var cart_width = parseInt($('.cart').css('width').replace("px", ''));
+            // var cart_width = cart_width;
+            if(parseInt($('.cart_container').css("margin-left").replace("px", '')) <= -(width - cart_width * 0.9 - 320)){
+                $('.cart_container').not(':animated').animate({"margin-left": (-width + cart_width * 0.9 - 320) + "px"}, 300);
+            }
+            else{
+                $('.cart_container').not(':animated').animate({"margin-left": (left_pos - 350) + "px"}, 300);
+            }
+            // alert(parseInt($('.cart_container').css("margin-left").replace("px", '')));
+          
+        }
+        right_click = false;
+        // Clear timeout
+        return false;
+      }).mousedown(function(){
+        // Set timeout
+        pressTimer = window.setTimeout(function() { 
+            var width = parseInt($('.cart_container').css('width').replace("px", ''));
+            var cart_width = parseInt($('.cart').css('width').replace("px", ''));
+            $('.cart_container').not(':animated').animate({"margin-left": (-width + cart_width * 0.9 - 320) + "px"}, 300);
+            right_click = true;
+        }, 200);
+        return false; 
+      });
 
-    });
+   
+    $(".left_cart").mouseup(function(){
+        clearTimeout(pressTimer);
+        if(!left_click)
+        {
+            var left_pos = parseInt($('.cart_container').css("margin-left").replace("px", ''));
+            var cart_width = parseInt($('.cart').css('width').replace("px", ''));
+            
+            if(parseInt($('.cart_container').css("margin-left").replace("px", '')) >= -cart_width * 0.5){
+                $('.cart_container').not(':animated').animate({"margin-left": "50px"}, 300);
+            }
+            else{
+                $('.cart_container').not(':animated').animate({"margin-left": (left_pos + 350) + "px"}, 300);
+            }
+           
+        }
+        left_click = false;
+        // Clear timeout
+        return;
+      }).mousedown(function(){
+        // Set timeout
+        pressTimer = window.setTimeout(function() { 
+            $('.cart_container').animate({"margin-left": "50px"}, 300);
+            left_click = true;
+        }, 200);
+        return; 
+      });
 
     $(".category_open_btn").on('click', (function (event) {
         if (ButtonRoles["categories"] == open) {
