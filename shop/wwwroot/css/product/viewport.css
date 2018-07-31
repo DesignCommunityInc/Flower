@@ -13,6 +13,8 @@
         width: 100%;
         height: 100px;
         transition: var(--transition-link);
+        box-shadow: var(--box-shadow-lightShadow);
+
     }
 
         .main_viewport .header .header_section {
@@ -118,6 +120,7 @@
     position: relative;
     width: 60%;
     height: 100%;
+    box-shadow: var(--box-shadow-lightShadow);
 }
 .image_section *:not(.selected_image) {
     cursor: pointer;
@@ -151,6 +154,7 @@
     right: 0;
     width: 35%;
     height: 100%;
+    box-shadow: var(--box-shadow-lightShadow);
 }
 .add_tocart {
     display: block;

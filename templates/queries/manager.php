@@ -65,6 +65,19 @@
 
         return $categories;
     }
+
+    function brands_fill($db){
+        $query = "SELECT `ID`, `name` FROM `brands`";
+        $action = mysqli_query($db, $query);
+
+        $brands = array();
+        
+        while ($item = mysqli_fetch_assoc($action)){
+            $brands[] = $item;
+        }
+
+        return $brands;
+    }
    
     function get_content($db) {//$filters = array(), $param){
         $errors = array();

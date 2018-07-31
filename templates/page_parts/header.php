@@ -1,9 +1,12 @@
 <div id="page-preloader"><span class="spinner"></span></div>
 
 <?php
-    $fill = "header_fill";
 
-    $categories = $fill($db);
+    $c_fill = "header_fill";
+    $categories = $c_fill($db);
+
+    $b_fill = "brands_fill";
+    $brands = $b_fill($db);
 
     // foreach($_categories as $cats){
     //     $id = $cats["ID"];
@@ -71,6 +74,29 @@
                     ?> 
                 </ul>
             </li>
+            <li class="brends">
+                <div class="brends_header">
+                    <label name="maintitle" class="non_selected">Бренды</label>
+                    <div class="brend_open_btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span name="title"></span>
+                </div>
+                <ul id="brend">
+                    <?php
+                        foreach($brands as $value){
+                            echo
+                            // var_dump($value);
+                            "<li><label class='brend'>".$value["name"]."</label>".
+                            "<div class='list_container'>";
+                            // "<label name='title'>".$value["name"]."</label>".
+                            // "<span name='title'></span></div></li>";
+                        }
+                    ?> 
+                </ul>
+            </li>   
             <li class="search_wrapper">
                 <div class="search">
                     <input type="text" placeholder="" id="src_input" onkeydown="src_uniKeyCode(event)" onBlur="src_onBlur()"/>
