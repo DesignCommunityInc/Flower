@@ -1,0 +1,167 @@
+
+.filter_btn{
+    text-transform: capitalize;
+    margin: 0 auto;
+    width: 140px!important;
+    height: 40px!important;
+    margin-top: 30px;
+    text-align: right!important;
+    padding-right: 30px;
+    font-weight: bold;
+}
+.filter_btn::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 8px;
+    left: 20px;
+    background-image: url('../../images/icons/filters.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.rate_container{
+    display: block;
+    position: relative;
+    max-width: 320px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 30px;
+    background: var(--color-primaryLight);
+    box-shadow: var(--box-shadow-lightShadow);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.rate_container::before{
+    content: "Рейтинг";
+    display: inline-block;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: 20px;
+    line-height: 60px;
+    font-weight: bold;
+}
+.rate_container .rate_block{
+    top: 0!important;
+    height: 100%!important;
+    width: 230px!important;
+    line-height: 65px;
+    right: 0!important;
+    left: unset!important;
+    box-shadow: unset!important;
+    border-radius: unset!important;
+}
+.filter_item{
+    vertical-align:top;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin-bottom: 30px;
+    margin-left: var(--margin-fromScreen_filters);
+    background: var(--color-primaryLight);
+    box-shadow: var(--box-shadow-lightShadow);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition-link);
+}
+.filter_item::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    background: linear-gradient(to top, var(--color-primaryLight) 50%, transparent);
+    transition: var(--transition-link);
+    z-index: 1;
+}
+.filter_active{
+    box-shadow: var(--box-shadow-buttonShadow);
+    transition: var(--transition-link);
+}
+.filter_header{
+    display: block;
+    position: relative;
+    max-width: 100%;
+    margin: 20px 10px 0 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.filter_header::after{
+    content: "";
+    display: block;
+    position: relative;
+    width: 30%;
+    height: 3px;
+    margin-top: 5px;
+    border-radius: 1.5px;
+    background: var(--color-primary);
+}
+.filter_body{
+    display: block;
+    position: relative;
+    max-width: 100%;
+    margin: 0 20px 0 20px;
+}
+.filter_body label{
+    cursor: pointer;
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+    height: 22px;
+}
+
+.filter_body label::before{
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    top: 2.5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--color-primary);
+    background: transparent;
+}
+.filter_body label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 7.5px;
+    left: 7.5px;
+    border-radius: 10px;
+    background: transparent;
+    transition: .1s ease-in-out;
+}
+.filter_radio_active::after {
+    width: 13px !important;
+    height: 13px !important;
+    top: 4.5px !important;
+    left: 2px !important;
+    background: var(--color-primary)!important;
+    transition: .1s ease-in-out;
+    }
+.filter_body label:hover::before {
+    background: var(--color-darkLight);
+    transition: .1s ease-in-out;
+}
+.filter_show_more{
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    max-width: 100%;
+    bottom: 10px;
+    margin: 0 20px 0 20px;
+    color: var(--color-fore-darkLight);
+    transition: var(--transition-link);
+    z-index: 2;
+}
+.filter_show_more:hover{
+    color: var(--color-primary);
+    transition: var(--transition-link);
+}

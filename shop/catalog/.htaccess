@@ -1,5 +1,15 @@
 ﻿RewriteEngine On
 
+# Протокол https, если он не назначен
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 #Изменение положения index
 
 DirectoryIndex index.php
+
+# Убрать index.php с url
+
+#RewriteRule ^index.php$ /catalog [QSA,R]

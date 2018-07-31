@@ -11,16 +11,23 @@
                         foreach($news as $product)
                         {
                             echo
-                            "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product'>" .
+                            "<div class='product' id='" . $product["ID"] . "'>" .
                             "<img src='" . $product["image_path"] . "'>" .
+                            "<div class='rate_block'>" . 
+                            "<div class='rate_star star_selected'> </div>" . 
+                            "<div class='rate_star star_selected'> </div>" . 
+                            "<div class='rate_star star_selected'> </div>" . 
+                            "<div class='rate_star'> </div>" . 
+                            "<div class='rate_star'> </div>" . 
+                            "</div>" . 
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
                             "</div>" .
                             "<span class='line'></span>" .
                             "<p>" . $product["title"] . "</p>" .
                             "<label name='price' class='price'>" . $product["price"] . "</label>" .
-                            "<div class='gradient'></div>" .
-                            "</a>";
+                            "<a href='/product/?id=" . $product["ID"] . "' class='ref'></a>" .
+                            "</div>";
                         }
                         ?>
                 </div>
@@ -56,7 +63,7 @@
                         {
                             if($counter > 3) break;
                             echo
-                            "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product'>" .
+                            "<div class='product' id='" . $product["ID"] . "'>" .
                             "<div class='sale_icon'>%</div>" . 
                             "<div class='rate_block'>" . 
                             "<div class='rate_star star_selected'> </div>" . 
@@ -71,9 +78,9 @@
                             "</div>" .
                             "<span class='line'></span>" .
                             "<p>" . $product["title"] . "</p>" .
-                            "<label name='price' class='price'>" . $product["price"] . "</label>" .
-                            "<div class='gradient'></div>" .
-                            "</a>";
+                            "<label name='price' class='price' attr-data='1500'>" . $product["price"] . "</label>" .
+                            "<a href='/product/?id=" . $product["ID"] . "'  class='ref'></a>" .
+                            "</div>";
                             $counter++;
                         }
                         ?>
@@ -97,7 +104,7 @@
                         foreach($seasons as $product)
                         {
                             echo
-                            "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "' class='product dynamic_product'>" .
+                            "<div class='product dynamic_product' id='" . $product["ID"] . "'>" .
                             "<img src='" . $product["image_path"] . "'>" .
                             "<div class='tocart'>" .
                             "<label>В корзину</label>" .
@@ -105,8 +112,8 @@
                             "<span class='line'></span>" .
                             "<p>" . $product["title"] . "</p>" .
                             "<label name='price' class='price'>" . $product["price"] . "</label>" .
-                            "<div class='gradient'></div>" .
-                            "</a>";
+                            "<a href='/product/?id=" . $product["ID"] . "'  class='ref'></a>" .
+                            "</div>";
                         }
                         ?>
                     </div>

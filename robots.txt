@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /shop/
+Disallow: /
+Host: https://flower

@@ -1,12 +1,14 @@
 <?php
+    // header('Location: //Flower/shop/index.php');
+
     $news = array();
     $sales = array();
     $seasons = array();
     //$categories = array();
     $slider = array();
     $footer = array();
-
-    $_POST["action"] = "fill";
+    if(!isset($_POST["action"]))
+        $_POST["action"] = "fill";
     $root = "../";
     require_once($root . "templates/queries/manager.php");
     $query = "db_query";
@@ -21,7 +23,8 @@
 <html style="--color-dynamic:<?php echo $color_1; ?>; --gradient-dynamic:<?php echo $gradient; ?>; --color2-dynamic:<?php echo $color_2; ?>">
 <head>
     <title>Flower</title>
-
+    <meta charset="utf-8" accesskey="makeup" />
+    
     <link rel="stylesheet" type="text/css" href="wwwroot/css/slider.css" />
     <link rel="stylesheet" type="text/css" href="wwwroot/css/menu.css" />
     <link rel="stylesheet" type="text/css" href="wwwroot/css/viewport.css" />

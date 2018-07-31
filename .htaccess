@@ -1,8 +1,6 @@
 ﻿<IfModule mod_rewrite.c>
-  
-# flower's directory
+Options +FollowSymLinks -MultiViews
 RewriteEngine on
+RewriteBase /
 RewriteRule ^(.*)$ shop/$1 [L]
-
-#RedirectPermanent shop/ https://Flower
 </IfModule>

@@ -15,6 +15,8 @@
 
     //echo password_hash("chery123", PASSWORD_BCRYPT);
 
+     
+    // var_dump($session);
 
     if($post){
         if(isset($post["action"])){

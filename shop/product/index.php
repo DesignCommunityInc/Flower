@@ -1,13 +1,20 @@
+<?php
+    $root = "../../";
+    require_once($root . "templates/queries/manager.php"); 
+    require_once($root . "templates/layout.php");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" accesskey="makeup" />
     <title>Flower</title>
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/product/viewport.css">
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/viewport.css">
+    <link rel="stylesheet" type="text/css" href="/wwwroot/css/custom_select.css">
+    <script src="/wwwroot/js/CustomSelect.js"></script>
+    <script src="/wwwroot/js/ProductScript.js"></script>
     <?php
-    $root = "../../";
-    require_once($root . "templates/layout.php");
-    require_once($root . "templates/queries/manager.php"); 
-
     $url = "https://vk.com/doc103959133_469378964?hash=9ca351008bffbf2a22&dl=f53832525e489cc483";
     $title = "Flower – интернет магазин";
     $description = "Бальзам для рук SOS восстановление";
@@ -21,11 +28,6 @@
 
     ?>
 
-    <link rel="stylesheet" type="text/css" href="/wwwroot/css/product/viewport.css">
-    <link rel="stylesheet" type="text/css" href="/wwwroot/css/viewport.css">
-    <link rel="stylesheet" type="text/css" href="/wwwroot/css/custom_select.css">
-    <script src="/wwwroot/js/CustomSelect.js"></script>
-    <script src="/wwwroot/js/ProductScript.js"></script>
 </head>
 <body>
     <?php
@@ -35,14 +37,13 @@
         <div class="header">
             <div class="header_section" id="prod_meta">
                 <label name="title">Бальзам для рук SOS восстановление</label>
-                <div class="rating">
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                    <span>☆</span>
+                <div class='rate_block'>
+                    <div class='rate_star star_selected'> </div> 
+                    <div class='rate_star star_selected'> </div> 
+                    <div class='rate_star star_selected'> </div> 
+                    <div class='rate_star'> </div>
+                    <div class='rate_star'> </div> 
                 </div>
-                <div class="vendor_code">000001</div>
                 <div class="clients_number">2781</div>
             </div>
             <div class="header_section" id="prod_price">
@@ -148,16 +149,16 @@
                             for($i = 0; $i < 8; $i++)
                             {
                                 echo
-                                "<a href='https://Flower/shop/product/' class='product'>" .
+                                "<div class='product'>" .
                                 "<img src='/wwwroot/images/products/product" . $i . ".png'>" .
                                 "<div class='tocart'>" .
                                 "<label>В корзину</label>" .
                                 "</div>" .
                                 "<span class='line'></span>" .
                                 "<p>Бальзам для рук SOS восстановление</p>" .
-                                "<label name='price' class='price'>720 ₽</label>" .
-                                "<div class='gradient'></div>" .
-                                "</a>";
+                                "<label name='price' class='price' attr-data='" . ($i + 5) * 150 . "'>720</label>" .
+                                "<a href='https://Flower/shop/product/?id=" . $product["ID"] . "'  class='ref'></a>" .
+                                "</div>";
                             }
                             ?>
                     </div>

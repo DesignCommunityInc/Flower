@@ -49,6 +49,34 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .content_prod_label{
+        margin-top: 30px;
+    }
+    .content_label{
+        margin-top: 50px;
+    }
+    .content_label::before {
+        content: "Категория";
+        display: inline-block;
+        position: absolute;
+        top: -30px; 
+        text-transform: capitalize;
+        font-size: var(--font-size-normal);
+        color: var(--color-fore-darkLight);
+    }
+    .content_image::before {
+        content: "";
+        display: block;
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        background-image: url("../images/icons/brands/oriflame.jpg")!important;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
         .viewport .header > label {
             display: block;
             font-size: 29px;
@@ -60,7 +88,7 @@
 
         .viewport .header > span {
             margin: auto;
-            background: var(--color-primary);
+            background: var(--gradient-default);
         }
   
 

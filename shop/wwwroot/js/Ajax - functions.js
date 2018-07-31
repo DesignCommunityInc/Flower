@@ -33,9 +33,24 @@ function administrator_exit() {
     });
 };
 
+// Administrator authentification_exit
+// function addToCart(product, image, message, state, href) {
+//     $.ajax({
+//         url: "/",
+//         method: 'POST',
+//         data: {
+//              action: "addToCart",
+//              prod: product
+//         },
+//     }).done(function (data) { 
+//         notification(image, message, state, href);
+//     }).always(function (dataError) {
+//     });
+// };
+
 function onAjaxSuccess_reload(data) {
     if (data == "success")
-        window.location.replace("https://Flower/shop/administrator/");
+        window.location.replace("https://Flower/administrator/");
 }
 
 //function splitString(stringToSplit, separator) {

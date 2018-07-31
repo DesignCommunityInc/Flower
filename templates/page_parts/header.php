@@ -1,3 +1,5 @@
+<div id="page-preloader"><span class="spinner"></span></div>
+
 <?php
     $fill = "header_fill";
 
@@ -14,8 +16,10 @@
     <nav>
         <ul class="navbar_one">
             <li class="logo">
+            <a href="//Flower/">
                 <img src="/wwwroot/images/icons/flower_icon.png" />
-                <a href="https://Flower">Flower</a>
+                <label>Flower</label>
+            </a>
             </li>
             <li class="meta">
                 <label>
@@ -26,10 +30,10 @@
             <li class="links">
                 <ul>
                     <li>
-                        <a href="https://Flower/shop/catalog/">Каталог</a>
+                        <a href="/catalog/">Каталог</a>
                     </li>
                     <li>
-                        <a href="#">Новости</a>
+                        <a href="/content/">Косметика</a>
                     </li>
                     <li>
                         <a href="#">О компании</a>
@@ -40,7 +44,7 @@
         <ul class="fixed_nav">
             <li class="categories">
                 <div class="category_header">
-                    <label name="maintitle">Категории</label>
+                    <label name="maintitle" class="non_selected">Категории</label>
                     <div class="category_open_btn">
                         <span></span>
                         <span></span>
@@ -59,7 +63,7 @@
                             "<ul class='list'>";
                             foreach($value["sub"] as $s){
                                 echo
-                                "<li><a href='".$s["ID"]."'><label>".$s["category_name"]."</label></a></li>";
+                                "<li><a href='/content/?=".$s["ID"]."'><label>".$s["category_name"]."</label></a></li>";
                             }
                             echo
                             "</ul></div></li>";
@@ -82,14 +86,27 @@
 
                 </div>
           </li>
-            <li name="bag" id="cart" attr-data="₽">
+            <li name="bag" id="cart" class="non_selected">
                 <img src="/wwwroot/images/icons/bag.png" width="48" />
                 <div class="cart_items_counter">2</div>
                 <div class="total_price">2 170</div>
             </li>
         </ul>
-        <iframe src="/cart.php"
-        class="cart_frame" id="cart_frame" scrolling="no" frameborder="no"></iframe>
+        <?php require_once("cart.php");?>
+        <div class="notification_wrapper">
+            <!-- <div class="notification">
+                <p>Добавлено</p>
+                <img src="/wwwroot/images/products/product1.png"/>
+                <label>Бальзам для рук SOS...</label>
+                <a href="/product/?=sos">Перейти к продукту</a>
+            </div>
+            <div class="notification">
+                <p>Добавлено</p>
+                <img src="/wwwroot/images/products/product2.png"/>
+                <label>Бальзам для рук SOS...</label>
+                <a href="/product/?=sos">Перейти к продукту</a>
+            </div> -->
+        </div>
     </nav>
     <!-- <div class="borderBottom" id="borderHeader"></div> -->
 </header>

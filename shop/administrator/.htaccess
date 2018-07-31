@@ -1,10 +1,17 @@
 ﻿RewriteEngine On
 
+# Протокол https, если он не назначен
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 #Изменение положения index
 
 DirectoryIndex index.php
 
-# Протокол https, если он не назначен
+# Убрать index.php с url
 
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]	
+#RewriteRule ^index.php$ /administrator/ [QSA,R]
+
+

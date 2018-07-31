@@ -1,5 +1,4 @@
 <?php
-
     require_once "db.php";
     require_once "functions.php";
 
@@ -9,7 +8,36 @@
     $cookie = $_COOKIE;
     $categories = array();
 
+    function cart_fill($db){
+        $cookie = unserialize($_COOKIE["flower_cart"]);
+        return var_dump($cookie);
+        $query = "SELECT `ID`, `category_name` FROM `categories`";
+        $action = mysqli_query($db, $query);
 
+        $categories = array();
+        
+        while ($item = mysqli_fetch_array($action)){
+            $categories[$item["ID"]][] = $item["category_name"];
+        }
+
+        foreach($categories as $it => $s){
+            $subcategories = array();
+            $id = $it;
+            $query1 = "SELECT `ID`, `category_name` FROM `sub_categories` WHERE `parent_id` = '$id'";
+            $action1 = mysqli_query($db, $query1);
+
+            while($item1 = mysqli_fetch_assoc($action1)){
+
+                $subcategories[] = $item1;
+                
+            }
+
+            $categories[$id]["sub"] = $subcategories;     
+        }
+
+        return $categories;
+    }
+   
     function header_fill($db){
         $query = "SELECT `ID`, `category_name` FROM `categories`";
         $action = mysqli_query($db, $query);
@@ -38,14 +66,32 @@
         return $categories;
     }
    
-
+    function get_content($db) {//$filters = array(), $param){
+        $errors = array();
+        $query = "db_query";
+        $content = $query("SELECT `ID`, `title`, `price`, `type`, `image_path` FROM `products` where `type` = 'sale'", $db);
+        if (count($content) == 0){
+            $errors[] = "Ошибка при поиске товара<br />";
+        };
+        echo $errors[0];
+        if(empty($errors)){
+           return $content;
+        }
+    }
+    
     if($post)
     {
         $action = $post["action"];
 
         switch($action)
         {
-            case "show_byId": break;
+            // case "addToCart":{
+            //     $prod = $post["prod"];
+            //     $addToCart = "addToCart";
+            //     $addToCart($prod);
+            //     // echo "success";
+            //     exit();
+            // } break;
             case "fill": 
             {
                 $errors = array();

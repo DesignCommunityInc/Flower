@@ -1,4 +1,13 @@
 ﻿<?php echo '
+<script type="text/javascript">
+document.addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (event.keyCode === 27) {
+        document.getElementById("quit").click();
+    }
+}); 
+</script>
+
     <header>
             '; if (in_array("1", $header_parts)) echo '
             <section id="first_section">
@@ -62,12 +71,4 @@
                 </div>
             </section>
     </header>
-      <script type="text/javascript">
-        document.addEventListener("keyup", function (event) {
-            event.preventDefault();
-            if (event.keyCode === 27) {
-                document.getElementById("quit").click();
-            }
-        }); 
-    </script>
     ';

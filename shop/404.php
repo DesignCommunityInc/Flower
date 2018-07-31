@@ -8,7 +8,7 @@
 <body>
 
  <div class="container">
-    <a href="https://Flower">
+    <a href="//Flower">
         <div class="_404" attr-data="Произошла ошибка, обычно она происходит если Вы ввели адрес несуществующей страницы.
             Пожалуйста, нажмите на '404' выше или введите эту ссылку в адресную строку https://Flower">
             <label>4</label>

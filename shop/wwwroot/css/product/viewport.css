@@ -29,21 +29,23 @@
                     font-size: var(--font-size-title);
                     font-weight: bold;
                 }
-.vendor_code {
-    display: inline-block;
-    position: absolute;
-    width: 35%;
-    left: 150px;
-    padding: 8px 0 8px 0;
-    text-align: center;
-    color: var(--color-fore-darkLight);
-    font-size: var(--font-size-mini);
-}
-    .vendor_code::before {
-        position: relative;
-        left: -20px;
-        content:"\0410\0440\0442\0438\043A\0443\043B\003A"; /* � � � � � � � : */
-    }
+                .main_viewport .header .header_section:nth-child(1) .rate_block {
+                    display: block;
+                    position: relative;
+                    width: 200px;
+                    top: unset;
+                    box-shadow: unset;
+                    left: unset;
+                    font-size: var(--font-size-title);
+                    font-weight: bold;
+                    top: 2px;
+                }
+                .main_viewport .header .header_section:nth-child(1) .rate_block .rate_star{
+                   left: unset;
+                   margin-left: unset;
+                   margin-right: 10px;
+                }
+
 .clients_number {
     display: block;
     position: absolute;

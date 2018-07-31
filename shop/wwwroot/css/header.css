@@ -6,7 +6,7 @@ header {
     height: 200px;
     top: 0;
     background: var(--color-primaryLight);
-    z-index: 999;
+    z-index: 998;
 }
     header .borderBottom {
         top: -1px!important;
@@ -85,7 +85,8 @@ li {
             height: 64px;
             border-radius: 50px;
         }
-        .navbar_one .logo a {
+        .navbar_one .logo label {
+            cursor: pointer;
             display: inline-block;
             position: relative;
             top: -20px;
@@ -151,7 +152,7 @@ li {
     opacity: 1;
     height: 90%;
     width: 100%;
-    bottom: -10px!important;
+    bottom: -6px!important;
     border-radius: 10px;
     background: var(--gradient-default);
     filter: var(--contrast-default);
@@ -268,6 +269,7 @@ li {
         width: 100%;
         margin: 0;
         transition: var(--transition-link);
+        filter: var(--contrast-default);
     }
         .categories ul li > label {
             cursor: pointer;
@@ -309,7 +311,7 @@ li {
     width: 340px;
     height: auto;
     left: 305px;
-    top: -50px;
+    top: -50px!important;
     background: white;
     border-radius: 10px;
     transition: var(--transition-link);
@@ -320,7 +322,7 @@ li {
     position: absolute;
     height: 90%;
     width: 100%;
-    bottom: -10px!important;
+    bottom: -6px!important;
     border-radius: 10px;
     background: var(--gradient-default);
     filter: var(--contrast-default);
@@ -464,7 +466,7 @@ li {
 }
 
 #cart::after{
-    content: attr(attr-data);
+    content: var(--content-r);
     position: absolute;
     right: 0px;
     top: 15px;
@@ -492,13 +494,14 @@ li {
     }
 
 .cart_frame{
-    display: none;
+    display: block;
     visibility: hidden;
     opacity: 0;
-    width: 100%;
+    max-width: 100%;
     height: 480px;
     margin-top: 0px;
     transition: var(--transition-link);
+    overflow: hidden!important;
 }
 .cart_frame_open{
     visibility: visible!important;
@@ -508,17 +511,16 @@ li {
 }
 
 .cart {
-    /* visibility: visible; */
     display: block;
     opacity: 1;
-    position: absolute;
-    width: 100%;
+    position: relative;
+    max-width: 100%;
     height: 450px;
-    /* left: 1%; */
     text-align: left;
     border-radius: 5px 5px 20px 20px!important;
     background: var(--color-primaryLight);
     transition: var(--transition-link);
+    border: 1px solid transparent;
 }
 .cart::before{
     content: "Корзина";
@@ -536,7 +538,7 @@ li {
     position: absolute;
     height: 100%;
     width: 100%;
-    bottom: -10px!important;
+    bottom: -6px!important;
     border-radius: 20px;
     background: var(--gradient-default);
     filter: var(--contrast-default);
@@ -547,8 +549,8 @@ li {
 .cart_container{
     display: block;
     position: relative;
-    /* width: 100%;
-    height: 100px; */
+    /* width: 100px; */
+    height: 400px;
     margin-top: 100px;
     margin-left: 50px;
     top: 0;
@@ -556,7 +558,7 @@ li {
     /* border: 1px solid #323232; */
     /* width: 70%; */
 }
-.cart_container::before{
+/* .cart_container::before{
     content: "";
     display: block;
     position: absolute;
@@ -567,9 +569,10 @@ li {
     border-radius: 50%;
     background: var(--gradient-default);
     opacity: .3;
-}
+} */
 .right_cart,
-.left_cart{
+.left_cart,
+.clear_cart{
     cursor: pointer;
     display: block;
     position: absolute;
@@ -584,18 +587,48 @@ li {
     text-align: center;
     line-height: 40px;
     filter: var(--contrast-default);
-    box-shadow: var(--box-shadow-buttonShadow);
+    transition: var(--transition-link);
 }
 .right_cart{
     right: 390px;
 }
+.right_cart:hover,
+.left_cart:hover,
+.clear_cart:hover{
+    box-shadow: 0 5px 30px -10px #323232;
+    transition: var(--transition-link);
+}
+.clear_cart{
+    right: 550px;
+    width: 150px;
+    font-size: var(--font-size-normal);
+}
     .cart .product {
+        opacity: 0;
         margin-bottom: 30px;
-        margin-left: 25px;
+        margin-left: 0;
         background: var(--color-primaryLight);
         box-shadow: var(--box-shadow-lightShadow);
         border-radius: 5px;
         overflow: hidden;
+        transition: var(--transition-link);
+    }
+    .cart .product::before {
+        content: attr(attr-data);
+        color: var(--color-fore-darkLight);
+        position: absolute;
+        display: block;
+        bottom: 10px;
+        left: 60px;
+        font-size: var(--font-size-mini);
+        font-weight: bold;
+        z-index: 10;
+        transition: var(--transition-link);
+    }
+    .product_inCart{
+        margin-left: 25px!important;
+        width: 180px!important;
+        opacity: 1!important;
         transition: var(--transition-link);
     }
 .cart .product:hover img{
@@ -646,32 +679,45 @@ li {
     color: var(--color-primaryLight);
     transition: var(--transition-link);
 }
-.cart .product .tocart {
+.cart .product .fromcart {
+    display: block;
+    position: absolute;
     cursor: pointer;
     opacity: 0;
     width: 80%;
     height: 50px;
-    bottom: unset!important;
-    top: 30%!important;
+    top: 30%;
     left: 10%;
     border-radius: 50px;
     background: transparent!important;   
     border: 1px solid var(--color-primaryLight);
     background: var(--color-primary);
-    z-index: 3;
+    z-index: 20;
     transition: var(--transition-link);
 }
-.cart .product:hover .tocart {
-    opacity: 1;
+.cart .product:hover .fromcart {
+    opacity: 1!important;
     transition: var(--transition-link);
 }
-.cart .product .tocart label {
+
+.cart .product .fromcart:hover {
+    box-shadow: 0 5px 20px -10px #323232;
+    background: var(--color-primaryLight)!important;
+    transition: var(--transition-link);
+}
+
+.cart .product .fromcart:hover label{
+    color: var(--color-primary);
+    transition: var(--transition-link);
+}
+.cart .product .fromcart label {
     cursor: pointer;
     display: block;
     position: relative;
     text-align: center;
-    padding: 5px;
-    top: 8px;
+    padding: unset;
+    left: 2px;
+    line-height: 28px;
     font-size: 10pt;
     text-transform: uppercase;
     color: var(--color-primaryLight);
@@ -739,11 +785,21 @@ li {
 }
 
     .cheque div {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
         display: block;
         position: relative;
         width: 280px;
-        margin-top: 10px;
+        margin-top: 0;
         left: 55px;
+        transition: var(--transition-link);
+    }
+    .cheque_note_active{
+        visibility: visible!important;
+        opacity: 1!important;
+        height: 50px!important;
+        margin-top: 10px!important;
         transition: var(--transition-link);
     }
     .cheque div::before {
@@ -805,7 +861,8 @@ li {
 }
 
 .cart_container .product {
-    width: 180px;
+    /* width: 180px; */
+    width: 0;
     height: 270px;
     top: 15px;
     float: left;
@@ -821,11 +878,11 @@ li {
         margin: 0 auto;
     }
 
-    .cart_container .product .tocart {
+    .cart_container .product .fromcart {
         height: 30px;
     }
 
-        .cart_container .product .tocart label {
+        .cart_container .product .fromcart label {
             text-transform: lowercase;
             top: 0;
         }
@@ -858,8 +915,8 @@ li {
         transition: var(--transition-link);
     }
 
-    .cart_container .product:hover .tocart {
-        opacity: 1;
-        bottom: -30%;
+    .cart_container .product:hover::before {
+        color: var(--color-primaryLight);
+        left: 70px;
         transition: var(--transition-link);
     }

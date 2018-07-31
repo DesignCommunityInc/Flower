@@ -8,7 +8,7 @@
 <body>
 
  <div class="container">
-    <a href="https://Flower">
+    <a href="//Flower">
         <div class="_404" attr-data="К сожалению, у Вас нет прав доступа к этой странице, вернитесь назад">
             <label>Error</label>
         </div>

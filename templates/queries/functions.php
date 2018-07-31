@@ -38,6 +38,55 @@ function user_verify($db, $login, $password)
         }
         return false;
 }
+
+// function addToCart($prod){
+//     // unset($_COOKIE["flower_cart"]);
+    
+//     $cookie = $_COOKIE;
+//     $cart = array();
+//     $id = explode("|", $prod)[0];
+//     $count = explode("|", $prod)[1];
+
+//     if(isset($cookie["flower_cart"])){
+//         $cart = unserialize($cookie["flower_cart"]);
+        
+//         // echo var_dump($cart);
+//         foreach($cart as $key => $value){
+//             if ($id != $key) continue;
+                
+//                 // если такой продукт уже есть 
+//                 $value = intval($value) + intval($count);
+//                 $cart[strval($id)] = strval($value);
+//                 echo var_dump($cart);
+//                 setcookie('flower_cart', serialize($cart));
+//                 exit();
+//         }
+//         $cart[] = $prod;
+//         setcookie('flower_cart', serialize($cart));
+//     }
+//     else{
+//         $cart[strval($id)] = strval($count);
+//         setcookie('flower_cart', serialize($cart), time() + (3600 * 24 * 30 * 6));
+//     }
+//     // echo "success";
+//     // exit();
+// }
+function removeFromCart($id){
+    $cookie = $_COOKIE;
+    if(isset($cookie["flower_cart"])){
+        $cart = unserialize($cookie["flower_cart"]);
+        $cart[] = $prod;
+        setcookie('flower_cart', serialize($cart));
+    }
+    else{
+        $cart = array();
+        $cart[] = $prod;
+        setcookie('flower_cart', serialize($cart), time() + (3600 * 24 * 30 * 6));
+    }
+    // $data = explode("|", $prod);
+    // $id = $data[0];
+    // $count = $data[1];
+}
 function fishtext($arg = 0)
 {
     $text = array();

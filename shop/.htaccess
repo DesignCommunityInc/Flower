@@ -2,17 +2,17 @@ RewriteEngine On
 
 # Протокол https, если он не назначен
 
-#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Убрать index.php с url
-
-RewriteRule ^index.php$ / [QSA,R]
-
-# При ошибке выводить страницу ошибки
-
+# 404 redirect page
 ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php
+
+#RewriteCond %{REQUEST_URI} /cart.php
+#RewriteCond %{QUERY_STRING} ^\z
+#RewriteRule ^(.*)$ https://flower/? [R=301,L]
+
+AddDefaultCharset utf-8
+AddType 'text/html; charset=utf-8' .html .htm .shtml
